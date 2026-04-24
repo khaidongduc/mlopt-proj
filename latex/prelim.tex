@@ -1,0 +1,90 @@
+\section{Preliminary Lemmas}
+
+
+We first proved some useful lemmas.
+
+\begin{lemma} \cite{gittens2023}[Equation (17)] \label{lemma:cmi2023-17} If $I - A$ is invertible, then $(I - A)^{-1} A = A(I - A)^{-1} = (I - A)^{-1} - I$.
+\end{lemma}
+
+\begin{lemma} \label{lemma:reduce-to-prod-U}
+    Let $X \in \R^{\N \times d}$ be of full rank. Let $X = U \Sigma V^T$ be the thin SVD of $X$. Then, for all $A, B$ comprised of rows of $X$, $U_A U_B^T = A (X^TX)^{-1}B^T$ where $U_A$, $U_B$ are comprised of rows of $U$ corresponding to rows of $A$ and $B$ in $X$.
+\end{lemma}
+
+\begin{proof}
+    By considering the SVD of $X$, we have the following
+    \begin{equation}
+        A = U_A \Sigma V^T, \quad B = U_B \Sigma V^T, \quad \text{and} \quad
+        (X^TX)^{-1} = V \Sigma^{-2}V^T.
+    \end{equation}
+    Thus,
+    \begin{equation}
+        A (X^TX)^{-1} B^T = U_A \Sigma V^T \cdot V \Sigma^{-2}V^T. V  \Sigma U_B^T = U_A U_B^T,
+    \end{equation}
+    as desired.
+\end{proof}
+
+
+
+\begin{lemma} \label{lemma:u_Ai-norm}
+    \begin{equation}        
+        \lVert u_{A, i} \rVert_2^2 = \lVert u_i \rVert_2^2 + u_i^T U_A^T (I - P_A)^{-1} U_A u_i.
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    Indeed,
+    \begin{align}
+        \lVert u_{A, i} \rVert_2^2 &= x_i^T (X^T X - A^T A)^{-1} x_i\\
+        &= x_i^T \left[ (X^T X)^{-1} + (X^T X)^{-1} A^T (I - P_A)^{-1} A (X^T X)^{-1}  \right] x_i\\
+        &= \lVert u_i \rVert_2^2 + u_i^T U_A^T (I - P_A)^{-1} U_A u_i \label{eqn:51}
+    \end{align}
+    where (\ref{eqn:51}) follows from Lemma~\ref{lemma:reduce-to-prod-U}, as desired.
+\end{proof}
+
+
+\begin{lemma} \label{lemma:alpha_Ai-norm}
+    Define  $\alpha_{A, i} = A((X_A^-)^T X_A^-)^{-1}x_i$. Then,
+    \begin{equation}
+        \alpha_{A, i} = (I - P_A)^{-1} U_A u_i
+    \quad \text{and} \quad
+        \lVert \alpha_{A, i} \rVert_2^2 = u_i^T U_A^T (I - P_A)^{-2} U_A u_i.
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    By the Woodbury matrix inversion identity, we have that
+
+    \begin{align}
+        \alpha_{A, i} &= A(X^T X - A^T A)^{-1} x_i\\
+            &= A \left[ (X^T X)^{-1} + (X^T X)^{-1} A^T \left( I - A(X^T X)^{-1}A^T \right)^{-1} A (X^T X)^{-1}  \right] x_i\\
+            &= U_A u_i + P_A (I - P_A)^{-1} U_A u_i \label{eqn:13}\\
+            &= (I - P_A)^{-1} U_A u_i \label{eqn:14}
+    \end{align}
+    where (\ref{eqn:13}) and (\ref{eqn:14}) follow from Lemma~\ref{lemma:reduce-to-prod-U} and Lemma~\ref{lemma:cmi2023-17}, respectively, as desired. The rest of the lemma follows by evaluating $\lVert \alpha_{A, i} \rVert_2^2$.
+\end{proof}
+
+
+\begin{lemma} \label{lemma:sum-norm-u-alpha}
+    \begin{equation}
+        \lVert u_{A, i} \rVert_2^2  + \lVert \alpha_{A, i} \rVert_2^2 = \lVert u_i \rVert_2^2 +  u_i^T U_A^T \left[ (I - P_A)^{-1} + (I - P_A)^{-2} \right] U_A u_i 
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    Follows from Lemma~\ref{lemma:u_Ai-norm} and Lemma~\ref{lemma:alpha_Ai-norm}.
+\end{proof}
+
+
+
+\begin{lemma} \label{lemma:UtDy}
+    Let $U \in \R^{N \times d}$, $D \in \R^{N \times N}$ be a diagonal matrix, and $y \in \R^N$. Then,
+    \begin{equation}
+        U^T D y = \sum_{i=1}^N D_{ii} u_i y_i.
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    This is trivial from multiplying out $U^T D y$.
+\end{proof}
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+\section{Introduction}
+
+In many real-world domains, we can collect huge amounts of unlabeled data (millions of records, images, signals), but labels are expensive and slow as they require experts (e.g., radiologists, pathologists, clinicians). As such, we want to minimize the number of labels needed while still enjoying the statistical benefits of having a large dataset.  
+Let $X \in \R^{N \times d}$ and \(y\in \R^{N}\) be the design
+matrix and target vector, respectively. The optimal regression weights \(w_*\) minimize
+\(\|X w-y\|_2^2\) over \(w\in\R^d\). The goal of our paper
+is to query a small number of labels in $y$ without knowing
+\(y\), and produce a set of near-optimal
+weights $w'$ using only
+the revealed labels and the corresponding rows in \(X\).
+Specifically, we desire $w'$ to be a \((1+d/N)\)-approximation
+to $w_*$ i.e.,
+\begin{equation}
+    \|X w' -y\|_2^2\le (1+d/N)\|X w_*-y\|_2^2
+\end{equation}
+since under typical modeling assumptions, the expected squared prediction error of $w_*$ approaches the Bayes optimal error to within 
+\math{O(d/N)}~\cite[Chapter 3]{Mostafa2012}.
+
+
+
+
+\subsection{Prior Works}
+
+Research on solving this problem has been particularly active, driven both by theoretical interest and by practical applications in areas such as machine learning, signal processing, and numerical linear algebra, etc.,~\cite{Chkifa2015, Cohn1994, Guo2020, Ksenia2015,Tong2004}. Multiple algorithms for active learning have been proposed~\cite{Alina2009, Boutsidis2013, Castro2008, pmlr-v99-chen19a, Sanjoy2011, Sanjoy2008, derenski2017,derenski2018, drineas2008, gittens2023, Kremer2014, Sivan2014}, most of which operate by sampling rows of $X$ to be included in the coreset. The most common algorithm is leverage score sampling, which achieves an $\epsilon$-regret with a coreset of size $\mathcal{O}(d/\epsilon + d\log d)$ ~\cite{drineas2008,Mahoney2011,Woodruff2014}. Several other algorithms, such as leveraged volume sampling~\cite{derenski2018} and pivotal dependent sampling~\cite{shimizu2024improved}, asymptotically achieve the same coreset size. Then, \cite{pmlr-v99-chen19a} and \cite{Devvrit2022} give 2 algorithms that achieve a coreset of size $\mathcal{O}(d / \epsilon)$; these algorithms are based on the randomized BSS proposed in~\cite{yintatlee2015}. However, at $\epsilon = d/N$, pivotal dependent sampling and randomized BSS provide very little label complexity reduction (either due to the large multiple constant or the structure of algorithm itself), while leverage score sampling and leverage volume sampling can only yield $(1 - e^{-2}) \cdot N$ label complexity reduction in the worst case~\cite{Khai2026review}. Then,~\cite{gittens2023} proposed an algorithm to reject rows specifically for $\epsilon = d/N$; the algorithm reduces label complexity by $\mathcal{O}(\sqrt{N})$. These algorithms, while they can't achieve the same label complexity reduction as their counterparts, exhibit superior performance for the removal of $1$ data points. In this work, we wish to expand on~\cite{gittens2023}'s work.
+
+
+\section{Notations} 
+Firstly, $X \in \R^{N \times d}$ and $y \in \R^N$ are the target design matrix and the corresponding labels of $X$, respectively. Typically, we assume $poly(d) \ll N \ll e^d$ and $X$ is of full rank. $x_i \in \R^d$ are the columns of $X^T$ and $y_i$ is the corresponding label of $x_i$. 
+Denote $X^-_A$ the matrix where we remove rows in $A$ from $X$. Similarly, $y_A^-$ and $y_A$ are the labels of $X_A^-$ and $A$, respectively. For the sake of simplicity, we assumed for all considered $A$, $X^-_A$ is at full rank. 
+Denote $w_*$ the regression weight obtained by regressing $X$ with $y$ and $w_A^-$ the regression weight obtained by regressing $X_A^-$ with $y_A^-$.
+Let $X_A^- = U \Sigma V^T$ be the thin SVD. Then, $u_{A, i} \in \R^d$ is the $i^\mathrm{th}$ column of $U^T$. For brevity, we denote $u_{\emptyset, i} = u_i$.
+Let $X = U \Sigma V^T$ be the thin SVD. Then, $U_A$ and $U_A^-$ are the rows of $U$ corresponding with $A$ and $X_A^-$, respectively, and $P_A = U_A U_A^T$ is the partial projection matrix.
+
+

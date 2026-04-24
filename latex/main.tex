@@ -1,0 +1,128 @@
+
+\documentclass{article} % For LaTeX2e
+\usepackage{iclr2026_conference,times}
+
+% Optional math commands from https://github.com/goodfeli/dlbook_notation.
+\input{math_commands.tex}
+% \input{command_macros.tex}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{subfloat}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{cancel}
+\usepackage[all]{xy}
+\usepackage[neveradjust]{paralist}
+\usepackage{subcaption}
+%\usepackage[style=alphabetic]{biblatex}f
+\usepackage[braket, qm]{qcircuit}
+\usepackage{mathtools} % also loads amsmath
+\usepackage{thm-restate}
+\usepackage{cleveref}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{accents}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{multirow}
+
+\usetikzlibrary{arrows,arrows.meta}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{positioning,shapes,backgrounds}
+\usetikzlibrary{calc,intersections,patterns,fit,automata,snakes}
+\usetikzlibrary{decorations.pathmorphing,decorations.pathreplacing,decorations.shapes}
+\usepackage{tikzsymbols}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\EE}{\mathbb{E}}
+
+\newcommand{\inv}{^{-1}}
+\newcommand{\sm}{\setminus}
+\newcommand{\ol}{\overline}
+
+%\declaretheorem[name=Theorem]{theorem}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newtheorem{conj}{Conjecture}
+\newtheorem{assump}{Assumption}
+
+\newtheorem*{problem*}{Problem}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{conj*}{Conjecture}
+
+
+\def\Psucc{\ensuremath{\cl P}}
+
+\input{command_macros.tex}
+
+
+\title{Robust Optimization in Active Linear Regression}
+
+% Authors must not appear in the submitted version. They should be hidden
+% as long as the \iclrfinalcopy macro remains commented out below.
+% Non-anonymous submissions will be rejected without review.
+
+% \title{Robust Optimization in Active Linear Regression}
+% \author{
+%   Khai Dong, Dylan Le, Kyle Eng
+% }
+\author{Khai Dong, Dylan Le, \& Kyle Eng\\
+Department of Computer Science\\
+Rensselaer Polytechnic Institute\\
+Troy, NY 12180, USA\\
+}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\iclrfinalcopy % Uncomment for camera-ready version, but NOT for submission.
+\begin{document}
+
+
+\maketitle
+
+\begin{abstract}
+This paper considers the problem of reducing label complexity for large datasets, as a means to reduce the cost of performing supervised learning with fewer labels. Despite the strengths of machine learning applications, training for high-dimensional problems requires greatly more labeled data to achieve optimum regression weights. As these learning algorithms become larger in dimension, more data will be needed. The human cost of labeling is great, so it is desired to reduce the need for labeling data as much as possible.
+In this paper we present our chaining sampling algorithm that reduces the label complexity of a dataset. We examine two case studies to see the effectiveness of this algorithm in real and synthetic data.
+\end{abstract}
+
+\input{intro.tex}
+\input{prelim.tex}
+\input{chaining.tex}
+
+% \pagebreak
+\input{Experiments}
+
+\input{conclusion.tex}
+
+
+\bibliography{ref}
+\bibliographystyle{iclr2026_conference}
+
+% \appendix
+
+
+\end{document}

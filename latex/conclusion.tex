@@ -1,0 +1,6 @@
+\section{Conclusion and Discussion}
+
+We have observed that CSA is very powerful when the model is well specified, but it performs poorly in the presence of deterministic noise. However, all tested real datasets yield roughly $10\%-30\%$ label reduction, which is a substantial cost reduction as the number of samples $N$ increases. However, due to the lack of a concrete coreset size, this algorithm is yet to be useful in practice, as we do not have access to $y$ for verification.
+
+It is an open question whether we can determine the label reduction only given $X$, if our sampling distribution is optimal, and whether we can find a distribution in which we may achieve the same label reduction under Gaussian noise, theoretically and empirically, under adversarial noise.\\
+

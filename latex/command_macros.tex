@@ -1,0 +1,1078 @@
+\newcommand{\remove}[1]{}
+
+%%%%%%%%%%%%%%%%%%SAFE SKIP COMMANDS
+\definecolor{skipcolor}{rgb}{1, .92, .92}
+\definecolor{rejoincolor}{rgb}{.9, 1, 0.9}
+\definecolor{frameskip}{rgb}{0.95, 0, 0}
+\definecolor{framerejoin}{rgb}{0, .75, 0}
+
+\definecolor{gold}{rgb}{1,0.553,0}
+%\definecolor{lightbrown}{rgb}{0.98,0.82,0.68}
+%\definecolor{lightbrown}{rgb}{0.861,0.7255,0.6}
+\definecolor{lightbrown}{rgb}{0.9305,0.86275,0.8}
+\definecolor{fillcopper}{rgb}{0.722,0.451,0.2}
+\definecolor{fillsilver}{rgb}{0.753,0.753,0.753}
+\definecolor{fillgray}{rgb}{0.4,0.4,0.4}
+\definecolor{filllightgray}{rgb}{0.6,0.6,0.6}
+\definecolor{fillLightgray}{rgb}{0.7,0.7,0.7}
+\definecolor{fillLLightgray}{rgb}{0.8,0.8,0.8}
+\definecolor{fillLLLightgray}{rgb}{0.9,0.9,0.9}
+\definecolor{fillred}{rgb}{1,0.15,0.15}
+\definecolor{filllightred}{rgb}{1,0.3,0.3}
+\definecolor{fillblue}{rgb}{0.2,0.35,1}
+\definecolor{filllightblue}{rgb}{0.75,0.85,1}
+\definecolor{fillgreen}{rgb}{0.2,0.7,0.2}
+\definecolor{filllightgreen}{rgb}{0.65,0.95,0.65}
+\definecolor{fillgreenbox}{rgb}{0.65,0.95,0.65}
+\definecolor{fillpurple}{rgb}{0.7,0.4,0.74}
+\definecolor{redRPI}{rgb}{0.839,0,0.1098}%RPI red
+
+\newcommand{\skipnow}[1]
+{
+\begin{center}
+\fcolorbox{frameskip}{skipcolor}{
+\begin{minipage}{0.7\textwidth}
+#1
+\end{minipage}
+}
+%\begin{skipstain}{0.7\textwidth}{0in}
+%#1
+%\end{skipstain}
+\end{center}
+}
+\newcommand{\rejoin}[1]
+{
+\begin{center}
+\fcolorbox{framerejoin}{rejoincolor}{
+\begin{minipage}{0.7\textwidth}
+#1
+\end{minipage}
+}
+%\begin{skipstain}{0.7\textwidth}{0in}
+%#1
+%\end{skipstain}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%END SAFE SKIP COMMANDS
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Math Commands
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%In-line math
+\def\math#1{$#1$}
+
+%Display math with no equation number
+\def\mand#1{$$#1$$}
+
+\def\mymathskip{5.25pt}
+\def\mymathskipc{2.5pt}
+%Compact Display math with no equation number
+\def\mandcc#1{\mand{\abovedisplayskip=\mymathskipc plus 1pt minus 1pt%
+\abovedisplayshortskip=0pt plus 1pt minus 1pt%
+\belowdisplayskip=\mymathskipc plus 1pt minus 1pt%
+\belowdisplayshortskip=0pt plus 1pt minus 1pt%
+#1}}
+
+\def\mandc#1{\mand{\abovedisplayskip=\mymathskip plus 1pt minus 1pt%
+\abovedisplayshortskip=0pt plus 1pt minus 1pt%
+\belowdisplayskip=\mymathskip plus 1pt minus 1pt%
+\belowdisplayshortskip=0pt plus 1pt minus 1pt%
+#1}}
+
+%Compact Display math with equation number
+\def\mldc#1{\mld{\abovedisplayskip=\mymathskip plus 1pt minus 1pt%
+\abovedisplayshortskip=0pt plus 1pt minus 1pt%
+\belowdisplayskip=\mymathskip plus 1pt minus 1pt%
+\belowdisplayshortskip=0pt plus 1pt minus 1pt%
+#1}}
+
+\def\mldcc#1{\mld{\abovedisplayskip=\mymathskipc plus 1pt minus 1pt%
+\abovedisplayshortskip=0pt plus 1pt minus 1pt%
+\belowdisplayskip=\mymathskip plus 1pt minus 1pt%
+\belowdisplayshortskip=0pt plus 1pt minus 1pt%
+#1}}
+
+%Compact equation array Display equation array with no numbering
+\def\eqanc#1{\eqan{\abovedisplayskip=\mymathskip plus 1pt minus 1pt%
+\abovedisplayshortskip=0pt plus 1pt minus 1pt%
+\belowdisplayskip=\mymathskip plus 1pt minus 1pt%
+\belowdisplayshortskip=0pt plus 1pt minus 1pt%
+#1}}
+
+\def\eqancc#1{\eqan{\abovedisplayskip=\mymathskipc plus 1pt minus 1pt%
+\abovedisplayshortskip=0pt plus 1pt minus 1pt%
+\belowdisplayskip=\mymathskipc plus 1pt minus 1pt%
+\belowdisplayshortskip=0pt plus 1pt minus 1pt%
+#1}}
+
+\def\eqarc#1{\eqar{\abovedisplayskip=\mymathskip plus 1pt minus 1pt%
+\abovedisplayshortskip=0pt plus 1pt minus 1pt%
+\belowdisplayskip=\mymathskip plus 1pt minus 1pt%
+\belowdisplayshortskip=0pt plus 1pt minus 1pt%
+#1}}
+
+\def\eqarcc#1{\eqar{\abovedisplayskip=\mymathskipc plus 1pt minus 1pt%
+\abovedisplayshortskip=0pt plus 1pt minus 1pt%
+\belowdisplayskip=\mymathskipc plus 1pt minus 1pt%
+\belowdisplayshortskip=0pt plus 1pt minus 1pt%
+#1}}
+
+
+%rounded operator around text
+%\newcommand*\rounded[1]{\tikz[baseline=(char.base)]{\node[shape=ellipse,draw,inner sep=1pt] (char) {#1};}}
+\newcommand*\rounded[1]{\left\{#1\right\}}
+
+
+
+%Display math with equation number.
+\def\mld#1{\begin{equation}
+#1
+\end{equation}}
+
+%Display equation array with no numbering
+\def\eqan#1{\begin{eqnarray*}
+#1
+\end{eqnarray*}}
+
+%Display equation array with numbering.
+\def\eqar#1{\begin{eqnarray}
+#1
+\end{eqnarray}}
+
+%Fractions
+
+\def\frac#1#2{{#1\over #2}}
+
+%Mathematical Spaces, eg \R for real numbers
+
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+
+% QED symbol
+\def\qed{\hfill\rule{2mm}{2mm}}
+\newcommand{\qedsymb}{\hfill{\rule{2mm}{2mm}}}
+%\def\qedExample{\hfill \math{\dagger}}
+\def\qedExample{\hfill \ensuremath{\Box}\vspace*{0.1in}}
+%\def\qedExample{\hfill \grey{\qed}\vspace*{0.1in}}
+\def\AnExample#1{\vskip2pt\noindent{\bf #1}}
+
+
+%Display mode sum for use in inline formla to have limits top and bottom
+\def\sm{\sum\limits}
+
+%n choose k combinatorial coefficient and stirling number of the 2nd kind.
+\def\choose#1#2{
+\mathchoice
+{\Big({{#1}\atop{#2}}\Big)}
+{\big({{#1}\atop{#2}}\big)}
+{({{#1}\atop{#2}})}
+{({{#1}\atop{#2}})}
+}
+\def\stirling#1#2{
+\mathchoice
+{\left\{{{#1}\atop{#2}}\right\}}
+{\big\{{{#1}\atop{#2}}\big\}}
+{\{{{#1}\atop{#2}}\}}
+{\{{{#1}\atop{#2}}\}}
+}
+
+\def\stirlingO#1#2{
+\mathchoice
+{\left[{{#1}\atop{#2}}\right]}
+{\big[{{#1}\atop{#2}}\big]}
+{[{{#1}\atop{#2}}]}
+{[{{#1}\atop{#2}}]}
+}
+
+
+%Shorter Caligraphic style command.
+\def\cl#1{{\cal #1}}
+
+%midcond
+\newcommand{\flexgiven}{\mathrel{}\middle|\mathrel{}}
+\newcommand{\given}{\mid}
+
+%Boxes around math for inline and display
+\def\mathbox#1{{\fbox{\math{#1}}}}
+\def\mandbox#1{{\fbox{\math{\displaystyle #1}}}}
+
+%Hint
+\def\hint#1{\emph{[Hint: #1]}}
+
+%argmin and argmax commands
+\def\argmin{\mathop{\hbox{argmin}}\limits}
+\def\argmax{\mathop{\hbox{argmax}}\limits}
+
+%vector norm
+\def\norm#1{{\mathchoice
+{\left\|#1\right\|}
+{\big\|#1\big\|}
+{\|#1\|}
+{\|#1\|}
+}}
+\newcommand{\innerprod}[2]{\langle #1,#2\rangle}
+
+
+%floor and ceiling
+\def\floor#1{
+\mathchoice
+{\left\lfloor\,#1\,\right\rfloor}
+{\big\lfloor\,#1\,\big\rfloor}
+{\lfloor\,#1\,\rfloor}
+{\lfloor\,#1\,\rfloor}
+}
+\def\ceil#1{
+\mathchoice
+{\left\lceil\,#1\,\right\rceil}
+{\big\lceil\,#1\,\big\rceil}
+{\lceil\,#1\,\rceil}
+{\lceil\,#1\,\rceil}
+}
+
+%refering to equations. Automatically puts parantheses.
+%%kept for compatibility, can be replaced with eqref
+\def\r#1{{\eqref{#1}}}
+
+
+%absolute value
+\newcommand{\absof}[1]{\left| #1 \right|}
+
+% Theorems etc.
+%\newtheorem{theorem}{\bf Theorem}[section]
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{axiom}[theorem]{Axiom}
+
+%\newcommand{\mysection}[1]{\clearpage\addtocounter{section}{1}\setcounter{subsection}{0}\section*{Lecture \thesection: #1}\addcontentsline{toc}{section}{Lecture \thesection: #1}}
+\newcommand{\mysection}[1]{\clearpage\section{#1}}
+
+
+% Colors (we may define more)
+%\newcommand{\black}[1]{{\color[named]{Black} #1}}
+\providecommand{\red}[1]{{\color{fillred} #1}}
+\providecommand{\blue}[1]{{\color{fillblue} #1}}
+\providecommand{\green}[1]{{\color{fillgreen} #1}}
+\newcommand{\purple}[1]{{\color{fillpurple} #1}}
+\newcommand{\gold}[1]{{\color{gold} #1}}
+\newcommand{\lightblue}[1]{{\color[rgb]{0.5,0.5,1} #1}}
+%\newcommand{\blue}[1]{{\color[named]{Blue} #1}}
+\newcommand{\grey}[1]{{\color[rgb]{0.15,0.15,0.15} #1}}
+\newcommand{\greyhighlight}[1]{{\color[rgb]{0.3,0.3,0.7} #1}}
+\newcommand{\lightgrey}[1]{{\color[rgb]{0.6,0.6,0.6} #1}}
+%\newcommand{\purple}[1]{{\color[named]{Purple} #1}}
+%\newcommand{\magenta}[1]{{\color[named]{Magenta} #1}}
+%\newcommand{\yellow}[1]{{\color[rgb]{1,.7,0} #1}}
+%\newcommand{\green}[1]{{\color[named]{Green} #1}}
+%\newcommand{\lightgreen}[1]{{\color[named]{SpringGreen} #1}}
+%\newcommand{\darkgreen}[1]{{\color[rgb]{0,0.5,0.0} #1}}
+%\newcommand{\cyan}[1]{{\color[named]{Cyan} #1}}
+%\newcommand{\navy}[1]{{\color[named]{NavyBlue} #1}}
+
+
+%Roman Numerals (upper and lower case)
+\newcounter{rmnum}
+\def\RN#1{\setcounter{rmnum}{#1}\uppercase\expandafter{\romannumeral\value{rmnum}}}
+\def\rn#1{\setcounter{rmnum}{#1}\expandafter{\romannumeral\value{rmnum}}}
+
+%Inequality and putting one thing on top of another in an equation.
+%%\def\lequal{{\buildrel{\scriptscriptstyle <}\over{\scriptscriptstyle =}}}
+%%\def\gequal{\ {\buildrel{\scriptstyle >}\over{\scriptstyle =}}\ }
+\def\econd#1#2{\ {\buildrel{\scriptstyle #1}\over{\scriptstyle #2}}\ }
+
+%Smiley face
+%\def\smileyface{\,\raisebox{-1pt}{\dSmiley[1.4]}\!\!}
+\def\smileyface{\,%
+\scalebox{0.55}{\begin{tikzpicture}[line width=1pt,baseline=-6pt]
+\shade[ball color=yellow](0,0)ellipse(10.5pt and 10.5pt);
+\draw[fill=black](0.145,0.1)ellipse(1.5pt and 1.5pt);
+\draw[fill=black](-0.145,0.1)ellipse(1.5pt and 1.5pt);
+\draw[fillred,line width=2pt]
+(-0.25,-0.025) .. controls (-0.15,-0.275) and (0.15,-0.275).. (0.25,-0.025);
+\end{tikzpicture}}}
+\def\sadface{\,%
+\scalebox{0.55}{\begin{tikzpicture}[line width=1pt,baseline=-6pt]
+\shade[ball color=yellow](0,0)ellipse(10.5pt and 10.5pt);
+\draw[fill=black](0.145,0.1)ellipse(1.5pt and 1.5pt);
+\draw[fill=black](-0.145,0.1)ellipse(1.5pt and 1.5pt);
+\draw[line width=2pt]
+(-0.2,-0.175) .. controls (-0.1,-0.05) and (0.1,-0.05).. (0.2,-0.175);
+\end{tikzpicture}}}
+\def\lightbulb{\,%
+\begin{tikzpicture}[line width=1pt,baseline=-5pt]
+\node[scale=0.018]{\includegraphics*{lightbulb.eps}};
+\end{tikzpicture}}
+
+\remove{
+\def\smileyface{{%
+\raisebox{1pt}{\scalebox{0.78}{\setlength{\unitlength}{1pt}
+\begin{picture}(10,10)
+\allinethickness{0.5pt}
+\put(5,2.69){\circle{10}}
+\put(3,4.23){\circle*{0.96}} 
+\put(6.69,4.23){\circle*{0.96}}
+\put(1.31,0){\spline(1.54,1.92)(3.62,0)(5.38,1.92)}
+\end{picture}\,%
+}}}}
+\def\sadface{{%
+\raisebox{1pt}{\scalebox{0.78}{\setlength{\unitlength}{1pt}
+\begin{picture}(10,10)
+\allinethickness{0.5pt}
+\put(5,2.69){\circle{10}}
+\put(3,4.23){\circle*{0.96}} 
+\put(6.69,4.23){\circle*{0.96}}
+\put(1.31,0){\spline(1.54,0.2)(3.62,2)(5.38,0.2)}
+\end{picture}\,%
+}}}}
+}
+
+\newcommand{\tstamp}{\today}
+
+%Define some colors
+\definecolor{shadecolor}{gray}{.85}%
+\definecolor{tintedcolor}{gray}{.8}%
+
+{\makeatletter\gdef\reallynopagebreak{\par\nopagebreak\@nobreaktrue}}
+
+%User Defined Numbering for Labeled Equations
+\newcommand\mytag[1]{\tag{\lightgrey{\bf #1}}}
+
+%Convenient macro for commenting out:
+\providecommand\remove[1]{}
+
+%Graphics related macros for scaling and rotating
+\newcommand{\rb}[1]{\rotatebox{90}{#1}}
+\newcommand{\st}[1]{\scalebox{2.5}{#1}}
+\newcommand{\sts}[1]{\scalebox{1.5}{#1}}
+\newcommand{\stn}[1]{\scalebox{1.5}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Yaser's stuuf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Invisible place taker, to effect taller parentheses
+\def\nadaup{{\rule[5pt]{0pt}{1pt}}}
+\def\nadadown{{\rule[-5pt]{0pt}{1pt}}}
+\def\nada{{^\nadaup_\nadadown}}
+
+% macro to allow Part I to be self-contained through switching certain wordings
+% ``long'' is the full book and ``short'' is Part I only
+% Comment out first line for short book, and comment out second line for long book.
+%\newcommand{\longshort}[2]{#1}
+\newcommand{\longshort}[2]{#2}
+\newcommand{\draftonly}[1]{#1}
+
+%Division/Number Theory
+\def\rem{\textrm{rem}}
+
+%My own wrapfigure like environment, compact.
+\newcommand{\whirl}[2]{
+{\setlength{\tabcolsep}{0pt}
+\begin{tabular}{p{0.825\textwidth}p{0.175\textwidth}}
+#1&\hfill#2
+\end{tabular}
+}
+}
+
+\newcommand{\whirlprob}[2]{
+{\setlength{\tabcolsep}{0pt}
+\begin{tabular}{p{0.76\textwidth}@{\hspace*{0.015\textwidth}}p{0.13\textwidth}}
+#1&#2
+\end{tabular}
+}
+}
+
+%PlayingCards
+\DeclareSymbolFont{extraup}{U}{zavm}{m}{n}
+\DeclareMathSymbol{\varheart}{\mathalpha}{extraup}{86}
+\DeclareMathSymbol{\vardiamond}{\mathalpha}{extraup}{87}
+\def\ss{\blue{\ensuremath{\spadesuit}}}
+\def\hs{\red{\ensuremath{\varheart}}}
+\def\ds{\red{\ensuremath{\diamondsuit}}}
+\def\cs{\ensuremath{\clubsuit}}
+
+
+%Shading and Boxes
+\newcommand{\myfbox}[3][white]{%
+\begin{center}%
+\begin{tikzpicture}
+\node[draw,inner sep=5pt,rounded corners=5pt,line width=1pt,fill=#1] at (0,0)
+{\parbox{#2}{\centering #3}};
+\end{tikzpicture}%
+\end{center}%
+}
+
+\newcommand{\myfboxindent}[3][white]{%
+\\[8pt]\hspace*{30pt}%
+\begin{tikzpicture}%
+\node[draw,inner sep=5pt,rounded corners=5pt,line width=1pt,fill=#1] at (0,0)
+{\parbox{#2}{\centering #3}};
+\end{tikzpicture}%
+\\[8pt]%
+}
+
+\newcommand{\mythickfbox}[3][white]{
+\begin{center}
+\begin{tikzpicture}
+\node[draw,inner sep=7pt,rounded corners=5pt,line width=2pt,fill=#1] at (0,0)
+{\parbox{#2}{\centering #3}};
+\end{tikzpicture}%
+\end{center}%
+}
+
+\newcommand{\myslimfbox}[3][white]{%
+\begin{center}%
+\vspace*{-5pt}%
+\begin{tikzpicture}%
+\node[draw,inner sep=5pt,rounded corners=5pt,line width=1pt,fill=#1] at (0,0)
+{\parbox{#2}{\centering #3}};
+\end{tikzpicture}%
+\vspace*{-5pt}%
+\end{center}%
+}
+
+\newcommand{\myslimfboxnonewline}[2]{
+\centerline{%
+\begin{tikzpicture}
+\node[draw,inner sep=4pt,rounded corners=5pt,line width=1.25pt] at (0,0)
+{\parbox{#1}{\centering #2}};
+\end{tikzpicture}%
+}\vspace*{2pt}
+}
+
+\newcommand{\myfboxshaded}[3]{
+\begin{center}%
+\vspace*{-1pt}%
+\begin{tikzpicture}%
+\node[fill=#2,inner sep=5pt,rounded corners=5pt] at (0,0)
+{\parbox{#1}{#3}};
+\end{tikzpicture}%
+\vspace*{-1pt}%
+\end{center}%
+}
+
+\newcommand{\myexpt}[2]{
+\begin{center}
+\begin{tikzpicture}
+\node[draw=black,inner sep=5pt,text=black,fill=shadecolor,line width=1pt] at (0,0)
+{\parbox{#1}{#2}};
+\end{tikzpicture}%
+\end{center}
+}
+
+\newcommand{\quotebox}[1]{%
+\smash{\begin{tikzpicture}[baseline=(current bounding box.north)]
+\node[inner sep=3pt,rounded corners=3pt,line width=1pt,fill=filllightblue,scale=0.8] at (0,0)
+{#1};
+\end{tikzpicture}}%
+}
+
+\newcommand{\TMbox}[2]{
+\begin{tikzpicture}
+\node[draw=fillblue,inner sep=3pt,text=black,fill=filllightblue,rounded corners=5pt,line width=1pt] at (0,0)
+{\parbox{#1}{#2}};
+\end{tikzpicture}%
+}
+
+
+%Dice
+\newcommand{\dieface}[2][none]{%
+\begin{tikzpicture}[baseline=-5pt,line width=2pt]
+\begin{scope}[x=1cm,y=1cm]
+\coordinate(center)at(0,0);
+\draw[rounded corners=8pt,fill=#1]($(center)+(-0.45,-0.45)$)rectangle($(center)+(0.45,0.45)$);
+\ifnum#2=1
+\node[circle,draw,fill,inner sep=1pt] at(center){};
+\fi
+\ifnum#2=2
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.2,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.2,0)$){};
+\fi
+\ifnum#2=3
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.2,-0.2)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,0.2)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.2,-0.2)$){};
+\fi
+\ifnum#2=4
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.2,0.2)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.2,0.2)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.2,-0.2)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.2,-0.2)$){};
+\fi
+\ifnum#2=5
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,-0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,-0.25)$){};
+\fi
+\ifnum#2=6
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.2,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.2,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.2,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.2,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.2,-0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.2,-0.25)$){};
+\fi
+\ifnum#2=7
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.15,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.15,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.15,-0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.15,-0.25)$){};
+\fi
+\ifnum#2=8
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,0.15)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,-0.15)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,-0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,-0.25)$){};
+\fi
+\ifnum#2=9
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,-0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,-0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,-0.25)$){};
+\fi
+\end{scope}
+\end{tikzpicture}}
+
+\newsavebox{\done}\begin{lrbox}{\done}\dieface{1}\end{lrbox}
+\newsavebox{\dtwo}\begin{lrbox}{\dtwo}\dieface{2}\end{lrbox}
+\newsavebox{\dthree}\begin{lrbox}{\dthree}\dieface{3}\end{lrbox}
+\newsavebox{\dfour}\begin{lrbox}{\dfour}\dieface{4}\end{lrbox}
+\newsavebox{\dfive}\begin{lrbox}{\dfive}\dieface{5}\end{lrbox}
+\newsavebox{\dsix}\begin{lrbox}{\dsix}\dieface{6}\end{lrbox}
+\newsavebox{\dseven}\begin{lrbox}{\dseven}\dieface{7}\end{lrbox}
+\newsavebox{\deight}\begin{lrbox}{\deight}\dieface{8}\end{lrbox}
+\newsavebox{\dnine}\begin{lrbox}{\dnine}\dieface{9}\end{lrbox}
+
+\newsavebox{\doneR}\begin{lrbox}{\doneR}\dieface[fillred]{1}\end{lrbox}
+\newsavebox{\dtwoR}\begin{lrbox}{\dtwoR}\dieface[fillred]{2}\end{lrbox}
+\newsavebox{\dthreeR}\begin{lrbox}{\dthreeR}\dieface[fillred]{3}\end{lrbox}
+\newsavebox{\dfourR}\begin{lrbox}{\dfourR}\dieface[fillred]{4}\end{lrbox}
+\newsavebox{\dfiveR}\begin{lrbox}{\dfiveR}\dieface[fillred]{5}\end{lrbox}
+\newsavebox{\dsixR}\begin{lrbox}{\dsixR}\dieface[fillred]{6}\end{lrbox}
+\newsavebox{\dsevenR}\begin{lrbox}{\dsevenR}\dieface[fillred]{7}\end{lrbox}
+\newsavebox{\deightR}\begin{lrbox}{\deightR}\dieface[fillred]{8}\end{lrbox}
+\newsavebox{\dnineR}\begin{lrbox}{\dnineR}\dieface[fillred]{9}\end{lrbox}
+
+\newsavebox{\doneG}\begin{lrbox}{\doneG}\dieface[gold]{1}\end{lrbox}
+\newsavebox{\dtwoG}\begin{lrbox}{\dtwoG}\dieface[gold]{2}\end{lrbox}
+\newsavebox{\dthreeG}\begin{lrbox}{\dthreeG}\dieface[gold]{3}\end{lrbox}
+\newsavebox{\dfourG}\begin{lrbox}{\dfourG}\dieface[gold]{4}\end{lrbox}
+\newsavebox{\dfiveG}\begin{lrbox}{\dfiveG}\dieface[gold]{5}\end{lrbox}
+\newsavebox{\dsixG}\begin{lrbox}{\dsixG}\dieface[gold]{6}\end{lrbox}
+\newsavebox{\dsevenG}\begin{lrbox}{\dsevenG}\dieface[gold]{7}\end{lrbox}
+\newsavebox{\deightG}\begin{lrbox}{\deightG}\dieface[gold]{8}\end{lrbox}
+\newsavebox{\dnineG}\begin{lrbox}{\dnineG}\dieface[gold]{9}\end{lrbox}
+
+%Dominos
+\newcommand{\domsmall}[1]{%
+\begin{tikzpicture}[baseline=-5pt,line width=3pt]
+\begin{scope}
+\coordinate(center)at(0,0);
+\ifnum#1=1
+\node[circle,draw,fill,inner sep=1pt] at(center){};
+\fi
+\ifnum#1=2
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.2,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.2,0)$){};
+\fi
+\ifnum#1=3
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.2,-0.2)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,0.2)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.2,-0.2)$){};
+\fi
+\ifnum#1=4
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.2,0.2)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.2,0.2)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.2,-0.2)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.2,-0.2)$){};
+\fi
+\ifnum#1=5
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,-0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,-0.25)$){};
+\fi
+\ifnum#1=6
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.2,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.2,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.2,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.2,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.2,-0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.2,-0.25)$){};
+\fi
+\ifnum#1=7
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.15,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.15,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.15,-0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.15,-0.25)$){};
+\fi
+\ifnum#1=8
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,0.15)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,-0.15)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,-0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,-0.25)$){};
+\fi
+\ifnum#1=9
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0,-0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,0)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(-0.25,-0.25)$){};
+\node[circle,draw,fill,inner sep=1pt] at($(center)+(0.25,-0.25)$){};
+\fi
+\draw($(center)+(-0.45,-0.45)$)rectangle($(center)+(0.45,0.45)$);
+\end{scope}
+\end{tikzpicture}
+}
+
+\newcommand{\mydomino}[2]{%
+\begin{tikzpicture}[baseline=-5pt,line width=2pt]
+\node(lower)at(0,0){\domsmall{#1}};
+\node(upper)at(0,0.9){\domsmall{#2}};
+\end{tikzpicture}
+}
+
+
+%Theory of Computing
+\newsavebox\Mone
+
+\newsavebox{\mycrayon}
+\begin{lrbox}{\mycrayon}
+\begin{tikzpicture}[line width=3pt,rotate=-20]
+\draw[fill=white](0,-2)circle[x radius=0.5cm,y radius=0.2cm];
+\draw[fill=white,draw=none](-0.5,0)rectangle(0.5,-2);
+\draw[fill=white](0,0)circle[x radius=0.5cm,y radius=0.2cm];
+\draw[fill=black](0,0)circle[x radius=0.125cm,y radius=0.04cm];
+\draw(-0.5,-2)--(-0.5,0)(0.5,0)--(0.5,-2);
+\draw[line width=2pt](-0.5,-2.035)--(0,-2.85)--(0.5,-2.035);
+\draw[line width=0pt,fill=black](-0.25,-2.4425)--(0,-2.85)--(0.25,-2.4425);
+\draw(0,-0.2)--(0,-2.2)(0.3535,-0.1414)--(0.3535,-2.1414)(-0.3535,-0.1414)--(-0.3535,-2.1414);
+\end{tikzpicture}
+\end{lrbox}
+
+
+
+
+%#1,#2 are the cell width and height
+%#3 is the string;#4 is the length of the string
+%#5 are the positions of the marks;#6 is the mark
+%#7 is the head position
+\newcommand{\tapestate}[7]{
+\def\xs{#1cm}
+\def\ys{#2cm}
+\pgfmathsetmacro\xst{#1}
+\pgfmathsetmacro\yst{#2}
+%
+\draw[xstep=\xs,ystep=\ys,filllightgray](0*\xst,0)grid(#4*\xst+2*\xst,\yst);
+%
+\node[inner sep=1pt,fillred](B0)at(-0.5*\xst+\xst,0.3*\yst)
+{\scalebox{1.25}{\text{\tt*}}};
+%
+\draw[xstep=\xs,ystep=\ys,](1*\xst,0)grid(#4*\xst+\xst,\yst);
+\foreach\x[count=\i]in{#3}
+\node[inner sep=1pt](B\i)at(0.5*\xst+\i*\xst,0.3*\yst){\x};
+%
+\node[inner sep=1pt,fillgray]at(-0.5*\xst+#4*\xst+2*\xst,0.3*\yst){\text{\tt\textvisiblespace}};
+%
+\draw[line width=1pt,->,>=open triangle 60] (0.5*\xst+#7*\xst,1.525*\yst)--(0.5*\xst+#7*\xst,\yst);
+%
+\foreach\x[count=\i]in{#5}
+\node[inner sep=1pt,fillgreen]at(-0.5*\xst+\x*\xst,0.7*\yst){#6};
+%
+}
+%#1 is the arrow start;#2 is the arrow end.
+\newcommand{\tapearrow}[2]{
+\draw[line width=0.5pt,->,gray](0.35*\xst+#1*\xst,1.2*\yst)--(0.5*\xst+#2*\xst,1.2*\yst);
+}
+\newcommand{\TMedge}[4]{\scalebox{#4}{\{#1\}\{#2\}\{{\tt #3}\}}}
+\newcommand{\TMinst}[5]{\{\math{#1}\}\,\{#2\}\,\math{\rightarrow}\,\{\math{#3}\}\,\{#4\}\,\{{\tt #5}\}}
+\newcommand{\TMgraph}[5]{
+\tikz[baseline=-2pt,font=\scriptsize,>=Latex]{
+\tikzset{every state/.style={minimum size=0pt,inner sep=2pt}}
+\node[state](q1)at(0,0){\math{#1}};
+\node[state,right of=q1,node distance=1.75cm](q3){\math{#3}};
+\path
+(q1)edge[->]node[pos=0.5,above=-1pt,font=\scriptsize]{\TMedge{#2}{#4}{#5}{0.9}}(q3)
+;
+}}
+
+\newsavebox\mandown
+\begin{lrbox}{\mandown}
+\begin{tikzpicture}[line width=2pt]
+\shade[ball color=fillgreen]
+(-0.7,-0.5) 
+to [bend right=20](-1.3,-2.5) 
+to[bend right=10] (-0.9,-2.48)
+to [bend right=5](-0.6,-4.45)
+to [bend right=5](0.6,-4.35)
+to [bend right=5](1.8,-4.2)
+to [out=88,in=-89](1.4,-1.2)
+to (1.5,-2)
+to [bend right=3](1.9,-1.9)
+to [bend right=5](0.9,0.7)
+--cycle;
+\path
+(-0.7,-0.5)edge[bend right=20](-1.3,-2.5)
+(-1.3,-2.5)edge[bend right=10](-0.3,-2.4)
+(-0.3,-2.4)edge[bend left=10](-0.3,-1.5)
+(-0.9,-2.48)edge[bend right=5](-0.6,-4.45)
+(-0.6,-4.45)edge[bend right=5](0.6,-4.35)
+(0.6,-4.3)edge[bend right=5](1.8,-4.2)
+(0.6,-4.3)edge[bend right=0](0.58,-3.2)
+(0.4,-3.1)edge[bend left=5](0.76,-3.1)
+(1.8,-4.1)edge[out=88,in=-89](1.4,-1.2)
+(1.5,-2)edge[bend right=3](1.9,-1.9)
+(1.9,-1.9)edge[bend right=5](0.9,0.7)
+;
+\shade[ball color=fillred,label=E1,draw,line width=1pt](0,0.5)ellipse(1.75cm and 1.75cm);
+\draw[fill,rotate=10](-0.9,-0.3)ellipse(2mm and 4mm);
+\draw[fill,rotate=-10](0.9,-0.3)ellipse(2mm and 4mm);
+\end{tikzpicture}
+\end{lrbox}
+
+
+
+
+
+\newcommand{\domino}[2]{
+\begin{tikzpicture}[baseline=-2pt]
+\node[draw,inner sep=2.5pt,line width=1pt,font=\scriptsize,rectangle split,rectangle split parts=2,rectangle split part fill={white,filllightgray},rounded corners=3pt](D)at(0,0)
+{#1\nodepart{two}#2};
+\end{tikzpicture}
+}
+
+%TREES
+
+\def\height{\textrm{height}}
+\def\size{\textrm{size}}
+
+\newcommand{\blacksubtree}[1]{
+\node[circle,fill=fillred,inner sep=2pt] (r) at (0,0) {};
+\node at (0.04,-0.43){#1};
+\draw[line width=1pt,rounded corners=3pt] (0,0) -- (-0.3,-0.6) -- (0.3,-0.6) -- cycle;
+\node[circle,fill=fillred,inner sep=2pt] (r) at (0,0) {};
+}
+\newcommand{\graysubtree}[1]{
+\node[circle,fill=gray,inner sep=2pt] (r) at (0,0) {};
+\node at (0.04,-0.43){#1};
+\draw[line width=1pt] (0,0) -- (-0.3,-0.6) -- (0.3,-0.6) -- cycle;
+\node[circle,fill=gray,inner sep=2pt] (r) at (0,0) {};
+}
+
+\newcommand{\tikzimp}{\tikz[line width=1pt,>=latex,baseline=0pt]{\draw[->](0,0)--(0.5,0);}}
+\newcommand{\tikzimpdouble}{\tikz[line width=1pt,>=latex,baseline=0pt]{\draw[->,double,double distance=1pt](0,0)--(0.5,0);}}
+
+\newsavebox\nodebox
+\begin{lrbox}{\nodebox}
+\begin{tikzpicture}
+\node[circle,fill=fillred,inner sep=2pt] at (0,0){};
+\end{tikzpicture}
+\end{lrbox}
+
+\newcommand{\vertex}[3][white]{\tikz[baseline=-3pt]{
+\node[circle,fill=#1,draw,inner sep=#3,line width=1pt]{};
+\node[inner sep=0pt,scale=0.7]{#2};
+}}
+
+\newcommand{\colortext}[5][black]{\tikz[baseline=-1.25pt]{
+\node[circle,draw=#2,inner sep=#3,line width=1pt]{};
+\node[#1,inner sep=0pt,scale=#4]{#5};
+}}
+
+\newcommand{\circuitnode}[4]{\node[circle,draw,line width=1.5pt,inner sep=1.5pt,fill=white](#3)at(#1,#2){#4};}
+\newcommand{\circuitsquarenode}[4]{\node[rounded corners=3pt,draw,line width=1.5pt,inner sep=2.5pt,fill=white](#3)at(#1,#2){#4};}
+\newcommand{\fillednode}[4]{\node[circle,draw,line width=1.5pt,inner sep=1.5pt,fill=filllightgray](#3)at(#1,#2){#4};}
+\newcommand{\Name}[1]{\textsc{#1}}
+\newcommand{\NPprob}[1]{\\[3pt]\hspace*{15pt}\parbox{0.925\textwidth}{#1}\\[3pt]}
+
+
+%COUNTING
+
+%Candy of different color
+\def\nc{\tikz{\node[circle,inner sep=2pt,draw] at (0,0){};}}%
+\def\rc{\tikz{\node[circle,inner sep=2pt,draw,fill=fillred] at (0,0){};}}%
+\def\bc{\tikz{\node[circle,inner sep=2pt,draw,fill=fillblue] at (0,0){};}}%
+\def\gc{\tikz{\node[circle,inner sep=2pt,draw,fill=fillgreen] at (0,0){};}}%
+\def\pc{\tikz{\node[circle,inner sep=2pt,draw,fill=fillpurple] at (0,0){};}}%
+\def\goldc{\tikz{\node[circle,inner sep=2pt,draw,fill=gold] at (0,0){};}}%
+
+%Scrabble tiles
+\newcommand{\tileordering}[4]{\tikz[font=\scriptsize,baseline=1.25pt]{\foreach\x [count=\i] in {#1,#2,#3,#4}
+\draw[line width=1.5pt,fill=lightgray,rounded corners=2pt] 
+(\i*0.37-0.37,0) rectangle (\i*0.37-0.05,0.32) 
+node[anchor=south,inner sep=0pt] at (\i*0.37-0.21,0.06) {\x};}%
+}
+
+\newcommand{\singletile}[1]{\tikz[font=\scriptsize,baseline=1.25pt]{\foreach\x [count=\i] in {#1}
+\draw[line width=1.5pt,fill=lightgray,rounded corners=2pt] 
+(\i*0.32-0.32,0) rectangle (\i*0.32,0.32) 
+node[anchor=south,inner sep=0pt] at (\i*0.32-0.16,0.06) {\x};}%
+}
+
+\remove{\newcommand{\labeltile}[2]{
+\begin{tikzpicture}[font=\scriptsize,baseline=1.25pt]
+\foreach\x [count=\i] in {#1}
+\draw[line width=1.5pt,fill=lightgray,rounded corners=2pt] (\i*0.32-0.32,0) rectangle (\i*0.32,0.32)
+node[anchor=south,inner sep=0pt] at (\i*0.32-0.16,0.06) {\x}
+node[anchor=south,inner sep=1pt] at (\i*0.32-0.16,0.33){#2};
+\end{tikzpicture}
+}}
+
+\newcommand{\labeltile}[2]{
+\tikz[font=\scriptsize,baseline=1.25pt]{\foreach\x [count=\i] in {#1}
+\draw[line width=1.5pt,fill=lightgray,rounded corners=2pt] (\i*0.32-0.32,0) rectangle (\i*0.32,0.32)
+node[anchor=south,inner sep=0pt] at (\i*0.32-0.16,0.06) {\x}
+node[anchor=south,inner sep=1pt] at (\i*0.32-0.16,0.33){#2};}%
+}
+
+%Algorithm
+\def\comment#1{\hfill \lightgrey{\scriptsize \% #1}}
+
+%Infinity
+\def\mapinj{\mathop{\buildrel\textsc{inj}\over\mapsto}}
+\def\mapbij{\mathop{\buildrel\textsc{bij}\over\mapsto}}
+\def\mapsur{\mathop{\buildrel\textsc{sur}\over\mapsto}}
+
+%Logo
+\newsavebox{\EMSQRD}
+\begin{lrbox}{\EMSQRD}
+\begin{tikzpicture}[line width=1.5pt]
+\node[draw,rounded corners=10pt,minimum height=1.6cm,minimum width=1.7cm,fill=filllightgray,double,double distance=3pt](B)at(0,0){};
+\node[inner sep=1pt](M)at(-0.175,0){\scalebox{2}[3]{\math{\bm{\cl{M}}}}};
+\node[inner sep=1pt](sq)at($(M.east|-M.north)+(0.1,-0.1)$)
+{\scalebox{1.5}{\bf\textsc{2}}};
+\end{tikzpicture}
+\end{lrbox}
+
+%Graphs
+\newcounter{numnodes}
+\def\bdot{\tikz[baseline=-2.5pt]{\node[circle,fill=fillblue,draw=fillblue,inner sep=1.5pt]{};}}
+\def\rdot{\tikz[baseline=-2.5pt]{\node[circle,fill=red,draw=red,inner sep=1.5pt]{};}}
+
+
+%TruthTables
+\newcommand{\TruthTable}[4]{
+\begin{tikzpicture}[x=0.65cm,y=0.375cm,baseline=-3pt]
+\pgfmathtruncatemacro\R{2^(#1)};
+\foreach\x[count=\i]in{#2}{
+\node[](v\i)at(0.7*\i,0){\math{\x}};
+}
+\node[anchor=west](prop)at($(v#1)+(0.5,0)$){#3};
+\draw($(v1.west)+(0,-0.5)$)--($(prop.east)+(0,-0.5)$);
+\draw($0.5*(v#1.east)+0.5*(prop.west)+(0,0.5)$)--($0.5*(v#1.east)+0.5*(prop.west)+(0,-\R-0.5)$);
+\foreach\t[count=\i] in{#4}{
+\node[](tv\i)at($(prop.south)+(0,-\i+0.5)$){\t};
+}
+\foreach\c in {1,...,#1}{
+\foreach\r in {1,...,\R}{
+\pgfmathtruncatemacro\s{2^(#1-\c)};
+\pgfmathtruncatemacro\a{mod(ceil(\r/\s),2)};
+\def\tval{\F};
+\ifnum\a<1
+\def\tval{\T};
+\fi
+\node[]at(v\c|-tv\r){\tval};
+}}
+\end{tikzpicture}
+}
+
+\newcommand{\TruthTableTwo}[6]{
+\begin{tikzpicture}[x=0.65cm,y=0.375cm,baseline=-3pt]
+\pgfmathtruncatemacro\R{2^(#1)};
+\foreach\x[count=\i]in{#2}{
+\node[](v\i)at(0.7*\i,0){\math{\x}};
+}
+\node[anchor=west](prop1)at($(v#1)+(0.5,0)$){#3};
+\node[anchor=west](prop2)at($(prop1.east)+(0.5,0)$){#5};
+\draw($(v1.west)+(0,-0.5)$)--($(prop2.east)+(0,-0.5)$);
+\draw($0.5*(v#1.east)+0.5*(prop1.west)+(0,0.5)$)--($0.5*(v#1.east)+0.5*(prop1.west)+(0,-\R-0.5)$);
+\foreach\t[count=\i] in{#4}{
+\node[](tv\i)at($(prop1.south)+(0,-\i+0.5)$){\t};
+}
+\foreach\t[count=\i] in{#6}{
+\node[](tv\i)at($(prop2.south)+(0,-\i+0.5)$){\t};
+}
+\foreach\c in {1,...,#1}{
+\foreach\r in {1,...,\R}{
+\pgfmathtruncatemacro\s{2^(#1-\c)};
+\pgfmathtruncatemacro\a{mod(ceil(\r/\s),2)};
+\def\tval{\F};
+\ifnum\a<1
+\def\tval{\T};
+\fi
+\node[]at(v\c|-tv\r){\tval};
+}}
+\end{tikzpicture}
+}
+\newcommand{\TruthTableThree}[8]{
+\begin{tikzpicture}[x=0.65cm,y=0.375cm,baseline=-3pt]
+\pgfmathtruncatemacro\R{2^(#1)};
+\foreach\x[count=\i]in{#2}{
+\node[](v\i)at(0.7*\i,0){\math{\x}};
+}
+\node[anchor=west](prop1)at($(v#1)+(0.5,0)$){#3};
+\node[anchor=west](prop2)at($(prop1.east)+(0.5,0)$){#5};
+\node[anchor=west](prop3)at($(prop2.east)+(0.5,0)$){#7};
+\draw($(v1.west)+(0,-0.5)$)--($(prop3.east)+(0,-0.5)$);
+\draw($0.5*(v#1.east)+0.5*(prop1.west)+(0,0.5)$)--($0.5*(v#1.east)+0.5*(prop1.west)+(0,-\R-0.5)$);
+\foreach\t[count=\i] in{#4}{
+\node[](tv\i)at($(prop1.south)+(0,-\i+0.5)$){\t};
+}
+\foreach\t[count=\i] in{#6}{
+\node[](tv\i)at($(prop2.south)+(0,-\i+0.5)$){\t};
+}
+\foreach\t[count=\i] in{#8}{
+\node[](tv\i)at($(prop3.south)+(0,-\i+0.5)$){\t};
+}
+\foreach\c in {1,...,#1}{
+\foreach\r in {1,...,\R}{
+\pgfmathtruncatemacro\s{2^(#1-\c)};
+\pgfmathtruncatemacro\a{mod(ceil(\r/\s),2)};
+\def\tval{\F};
+\ifnum\a<1
+\def\tval{\T};
+\fi
+\node[]at(v\c|-tv\r){\tval};
+}}
+\end{tikzpicture}
+}
+
+
+
+%Venn Diagrams
+
+\newcommand{\venntwo}[2]{
+%First argument contains 2 names.
+%Next arguments has 4 colors for U,A,B,A\cupB
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+\def\universal{(-2,-2) rectangle (4,2)}
+\foreach\x[count=\i] in {#2}{
+\ifnum\i=1
+\fill[fill=\x] \universal;
+\fi
+\ifnum\i=2
+\fill[fill=\x] \firstcircle;
+\fi
+\ifnum\i=3
+\fill[fill=\x] \secondcircle;
+\fi
+\ifnum\i=4
+\begin{scope}
+\clip\firstcircle;
+\fill[fill=\x] \secondcircle;
+\end{scope}
+\fi
+}
+%
+\foreach\x[count=\i] in {#1}{
+\ifnum\i=1
+\draw\firstcircle node[scale=0.9,left=-1pt]{\x};
+\fi
+\ifnum\i=2
+\draw\secondcircle node[scale=0.9,right=-1pt]{\x};
+\fi
+}
+\draw\universal;
+}
+
+\newcommand{\vennthree}[2]{
+%First argument contains 3 names.
+%Next arguments has 8 colors for U,A,B,C,A\cupB,A\cupC,B\cupC,A\cupB\cupC
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(60:2cm) circle (1.5cm)}
+\def\thirdcircle{(0:2cm) circle (1.5cm)}
+\def\universal{(-2,-2) rectangle (4,3.7321)}
+\foreach\x[count=\i] in {#2}{
+\ifnum\i=1
+\fill[fill=\x] \universal;
+\fi
+\ifnum\i=2
+\fill[fill=\x] \firstcircle;
+\fi
+\ifnum\i=3
+\fill[fill=\x] \secondcircle;
+\fi
+\ifnum\i=4
+\fill[fill=\x] \thirdcircle;
+\fi
+\ifnum\i=5
+\begin{scope}
+\clip\firstcircle;
+\fill[fill=\x] \secondcircle;
+\end{scope}
+\fi
+\ifnum\i=6
+\begin{scope}
+\clip\firstcircle;
+\fill[fill=\x] \thirdcircle;
+\end{scope}
+\fi
+\ifnum\i=7
+\begin{scope}
+\clip\secondcircle;
+\fill[fill=\x] \thirdcircle;
+\end{scope}
+\fi
+\ifnum\i=8
+\begin{scope}
+\clip\firstcircle;
+\clip\secondcircle;
+\fill[fill=\x] \thirdcircle;
+\end{scope}
+\fi
+}
+%
+\foreach\x[count=\i] in {#1}{
+\ifnum\i=1
+\draw\firstcircle node[scale=0.9,left=-1pt]{\x};
+\fi
+\ifnum\i=2
+\draw\secondcircle node[scale=0.9,above=-1pt]{\x};
+\fi
+\ifnum\i=3
+\draw\thirdcircle node[scale=0.9,right=-1pt]{\x};
+\fi
+}
+\draw\universal;
+}
+
+
+%DelveDeeper
+\newcommand{\delve}[1]{\vfill\noindent\rule{\linewidth}{1pt}\vskip-2pt\AnExample{\scalebox{1.4}{\lightbulb{}} Dig Deeper.} \parbox[t]{0.75\linewidth}{#1} \scalebox{1.4}{\lightbulb{}}
+%
+%\smallskip\noindent\rule{\linewidth}{1pt}\vfill
+}
+
+
+%INDEXING
+\newcommand{\myindex}[1]{\mbox{\index{#1}}}

@@ -1,0 +1,681 @@
+
+@InProceedings{pmlr-v99-chen19a,
+  title = 	 {Active Regression via Linear-Sample Sparsification},
+  author =       {Chen, Xue and Price, Eric},
+  booktitle = 	 {Proceedings of the Thirty-Second Conference on Learning Theory},
+  pages = 	 {663--695},
+  year = 	 {2019},
+  editor = 	 {Beygelzimer, Alina and Hsu, Daniel},
+  volume = 	 {99},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {6},
+  publisher =    {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v99/chen19a/chen19a.pdf},
+  url = 	 {https://proceedings.mlr.press/v99/chen19a.html},
+  abstract = 	 { We present an approach that improves the sample complexity for a variety of curve fitting problems, including active learning for linear regression, polynomial regression, and continuous sparse Fourier transforms.  In the active linear regression problem, one would like to estimate the least squares solution $\beta^*$ minimizing $\|X\beta - y\|_2$ given the entire unlabeled dataset $X \in \mathbb{R}^{n \times d}$ but only observing a small number of labels $y_i$.  We show that $O(d)$ labels suffice to find a constant factor approximation $\widetilde{\beta}$: \[ \mathbb{E}[\|{X} \widetilde{\beta} - y \|_2^2] \leq 2 \mathbb{E}[\|X \beta^* - y\|_2^2]. \]{This} improves on the best previous result of $O(d \log d)$ from leverage score sampling.  We also present results for the \emph{inductive} setting, showing when $\widetilde{\beta}$ will generalize to fresh samples; these apply to continuous settings such as polynomial regression.  Finally, we show how the techniques yield improved results for the non-linear sparse Fourier transform setting.   }
+}
+
+@INPROCEEDINGS{yintatlee2015,
+  author={Lee, Yin Tat and Sun, He},
+  booktitle={2015 IEEE 56th Annual Symposium on Foundations of Computer Science}, 
+  title={Constructing Linear-Sized Spectral Sparsification in Almost-Linear Time}, 
+  year={2015},
+  volume={},
+  number={},
+  pages={250-269},
+  keywords={Approximation methods;Approximation algorithms;Eigenvalues and eigenfunctions;Algorithm design and analysis;Laplace equations;Resistance;Computer science;algorithmic spectral graph theory;spectral sparsification},
+  doi={10.1109/FOCS.2015.24}
+}
+
+
+
+@article{bss12,
+  author = {Batson, Joshua and Spielman, Daniel A. and Srivastava, Nikhil},
+  title = {Twice-Ramanujan Sparsifiers},
+  journal = {SIAM Journal on Computing},
+  volume = {41},
+  number = {6},
+  pages = {1704-1721},
+  year = {2012},
+  doi = {10.1137/090772873},
+  URL = {https://doi.org/10.1137/090772873},
+  eprint = {https://doi.org/10.1137/090772873},
+  abstract = { We prove that every graph has a spectral sparsifier with a number of edges linear in its number of vertices. As linear-sized spectral sparsifiers of complete graphs are expanders, our sparsifiers of arbitrary graphs can be viewed as generalizations of expander graphs. In particular, we prove that for every \$d>1\$ and every undirected, weighted graph \$G=(V,E,w)\$ on \$n\$ vertices, there exists a weighted graph \$H=(V,F,\tilde{w})\$ with at most \$\lceil d(n-1)\rceil\$ edges such that for every \$x\in\mathbb{R}^{V}\$, \$x^{T}L\_{G}x\leq x^{T}L\_{H}x\leq\bigl(\frac{d+1+2\sqrt{d}}{d+1-2\sqrt{d}}\bigr)\cdot x^{T}L\_{G}x\$, where \$L\_{G}\$ and \$L\_{H}\$ are the Laplacian matrices of \$G\$ and \$H\$, respectively. Thus, \$H\$ approximates \$G\$ spectrally at least as well as a Ramanujan expander with \$dn/2\$ edges approximates the complete graph. We give an elementary deterministic polynomial time algorithm for constructing \$H\$. }
+}
+
+
+@Article{Tropp2012,
+  author={Tropp, Joel A.},
+  title={User-Friendly Tail Bounds for Sums of Random Matrices},
+  journal={Foundations of Computational Mathematics},
+  year={2012},
+  month={Aug},
+  day={01},
+  volume={12},
+  number={4},
+  pages={389-434},
+  abstract={This paper presents new probability inequalities for sums of independent, random, self-adjoint matrices. These results place simple and easily verifiable hypotheses on the summands, and they deliver strong conclusions about the large-deviation behavior of the maximum eigenvalue of the sum. Tail bounds for the norm of a sum of random rectangular matrices follow as an immediate corollary. The proof techniques also yield some information about matrix-valued martingales.},
+  issn={1615-3383},
+  doi={10.1007/s10208-011-9099-z},
+  url={https://doi.org/10.1007/s10208-011-9099-z}
+}
+
+@misc{gittens2023,
+      title={Reduced Label Complexity For Tight $\ell_2$ Regression}, 
+      author={Alex Gittens and Malik Magdon-Ismail},
+      year={2023},
+      eprint={2305.07486},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2305.07486}, 
+}
+
+
+@unpublished{gittens2025,
+      title={Reduced Label Complexity For Tight $\ell_2$ Regression}, 
+      author={Alex Gittens and Malik Magdon-Ismail},
+      year={2025},
+}
+
+
+
+
+@inproceedings{Devvrit2022,
+  author = {Devvrit, Fnu and Rajaraman, Nived and Awasthi, Pranjal},
+  title = {Semi-supervised active linear regression},
+  year = {2022},
+  isbn = {9781713871088},
+  publisher = {Curran Associates Inc.},
+  address = {Red Hook, NY, USA},
+  abstract = {Labeled data often comes at a high cost as it may require recruiting human labelers or running costly' experiments. At the same time, in many practical scenarios, one already has access to a partially labeled, potentially biased dataset that can help with the learning task at hand. Motivated by such settings, we formally initiate a study of semi-supervised active learning through the frame of linear regression. Here, the learner has access to a dataset $X in mathbb{R}^{(n_{text{un}}+n_{text{lab}}) times d}$ composed of nun unlabeled examples that a learner can actively query, and nlab examples labeled a priori. Denoting the true labels by $Y in mathbb{R}^{n_{text{un}} + n_{text{lab}}}$, the learner's objective is to find $widehat{beta} in mathbb{R}^d$ such that, $$| X widehat{beta} - Y |_2^2 le (1 + epsilon) min_{beta in mathbb{R}^d} | X beta - Y |_2^2$$ (1)while querying the labels of as few unlabeled points as possible. In this paper, we introduce an instance dependent parameter called the reduced rank, denoted Rx, and propose an efficient algorithm with query complexity O(RX/∈). This result directly implies improved upper bounds for two important special cases: (i) active ridge regression, and (ii) active kernel ridge regression, where the reduced-rank equates to the statistical dimension, sdλ and effective dimension, dλ of the problem respectively, where λ ≥ 0 denotes the regularization parameter. Finally, we introduce a distributional version of the problem as a special case of the agnostic formulation we consider earlier; here, for every X, we prove a matching instance-wise lower bound of Ω(RX/ε) on the query complexity of any algorithm.},
+  booktitle = {Proceedings of the 36th International Conference on Neural Information Processing Systems},
+  articleno = {95},
+  numpages = {13},
+  location = {New Orleans, LA, USA},
+  series = {NIPS '22}
+}
+
+@inproceedings{shimizu2024improved,
+  title={Improved Active Learning via Dependent Leverage Score Sampling},
+  author={Atsushi Shimizu and Xiaoou Cheng and Christopher Musco and Jonathan Weare},
+  booktitle={The Twelfth International Conference on Learning Representations},
+  year={2024},
+  url={https://openreview.net/forum?id=IYxDy2jDFL}
+}
+
+
+@inproceedings{derenski2018,
+  author = {Derezi\'{n}ski, Michat and Warmuth, Manfred K. and Hsu, Daniel},
+  title = {Leveraged volume sampling for linear regression},
+  year = {2018},
+  publisher = {Curran Associates Inc.},
+  address = {Red Hook, NY, USA},
+  abstract = {Suppose an n \texttimes{} d design matrix in a linear regression problem is given, but the response for each point is hidden unless explicitly requested. The goal is to sample only a small number k ≪ n of the responses, and then produce a weight vector whose sum of squares loss over all points is at most 1 + ε times the minimum. When k is very small (e.g., k = d), jointly sampling diverse subsets of points is crucial. One such method called volume sampling has a unique and desirable property that the weight vector it produces is an unbiased estimate of the optimum. It is therefore natural to ask if this method offers the optimal unbiased estimate in terms of the number of responses k needed to achieve a 1 + ε loss approximation.Surprisingly we show that volume sampling can have poor behavior when we require a very accurate approximation – indeed worse than some i.i.d. sampling techniques whose estimates are biased, such as leverage score sampling. We then develop a new rescaled variant of volume sampling that produces an unbiased estimate which avoids this bad behavior and has at least as good a tail bound as leverage score sampling: sample size k = O(d log d + d/ε) suffices to guarantee total loss at most 1 + ε times the minimum with high probability. Thus we improve on the best previously known sample size for an unbiased estimator, k = O(ε2/ε).Our rescaling procedure leads to a new efficient algorithm for volume sampling which is based on a determinantal rejection sampling technique with potentially broader applications to determinantal point processes. Other contributions include introducing the combinatorics needed for rescaled volume sampling and developing tail bounds for sums of dependent random matrices which arise in the process.},
+  booktitle = {Proceedings of the 32nd International Conference on Neural Information Processing Systems},
+  pages = {2510–2519},
+  numpages = {10},
+  location = {Montr\'{e}al, Canada},
+  series = {NIPS'18}
+}
+
+@inproceedings{derenski2017,
+  author = {Derezi\'{n}ski, Micha\l{} and Warmuth, Manfred K.},
+  title = {Unbiased estimates for linear regression via volume sampling},
+  year = {2017},
+  isbn = {9781510860964},
+  publisher = {Curran Associates Inc.},
+  address = {Red Hook, NY, USA},
+  abstract = {Given a full rank matrix X with more columns than rows, consider the task of estimating the pseudo inverse X+ based on the pseudo inverse of a sampled subset of columns (of size at least the number of rows). We show that this is possible if the subset of columns is chosen proportional to the squared volume spanned by the rows of the chosen submatrix (ie, volume sampling). The resulting estimator is unbiased and surprisingly the covariance of the estimator also has a closed form: It equals a specific factor times X+⊤ X+.Pseudo inverse plays an important part in solving the linear least squares problem, where we try to predict a label for each column of X. We assume labels are expensive and we are only given the labels for the small subset of columns we sample from X. Using our methods we show that the weight vector of the solution for the sub problem is an unbiased estimator of the optimal solution for the whole problem based on all column labels.We believe that these new formulas establish a fundamental connection between linear least squares and volume sampling. We use our methods to obtain an algorithm for volume sampling that is faster than state-of-the-art and for obtaining bounds for the total loss of the estimated least-squares solution on all labeled columns.},
+  booktitle = {Proceedings of the 31st International Conference on Neural Information Processing Systems},
+  pages = {3087–3096},
+  numpages = {10},
+  location = {Long Beach, California, USA},
+  series = {NIPS'17}
+}
+
+@article{Mahoney2011,
+  author = {Mahoney, Michael W.},
+  title = {Randomized Algorithms for Matrices and Data},
+  year = {2011},
+  issue_date = {February 2011},
+  publisher = {Now Publishers Inc.},
+  address = {Hanover, MA, USA},
+  volume = {3},
+  number = {2},
+  issn = {1935-8237},
+  url = {https://doi.org/10.1561/2200000035},
+  doi = {10.1561/2200000035},
+  abstract = {Randomized algorithms for very large matrix problems have received a great deal of attention in recent years. Much of this work was motivated by problems in large-scale data analysis, largely since matrices are popular structures with which to model data drawn from a wide range of application domains, and this work was performed by individuals from many different research communities. While the most obvious benefit of randomization is that it can lead to faster algorithms, either in worst-case asymptotic theory and/or numerical implementation, there are numerous other benefits that are at least as important. For example, the use of randomization can lead to simpler algorithms that are easier to analyze or reason about when applied in counterintuitive settings; it can lead to algorithms with more interpretable output, which is of interest in applications where analyst time rather than just computational time is of interest; it can lead implicitly to regularization and more robust output; and randomized algorithms can often be organized to exploit modern computational architectures better than classical numerical methods.This monograph will provide a detailed overview of recent work on the theory of randomized matrix algorithms as well as the application of those ideas to the solution of practical problems in large-scale data analysis. Throughout this review, an emphasis will be placed on a few simple core ideas that underlie not only recent theoretical advances but also the usefulness of these tools in large-scale data applications. Crucial in this context is the connection with the concept of statistical leverage. This concept has long been used in statistical regression diagnostics to identify outliers; and it has recently proved crucial in the development of improved worst-case matrix algorithms that are also amenable to high-quality numerical implementation and that are useful to domain scientists. This connection arises naturally when one explicitly decouples the effect of randomization in these matrix algorithms from the underlying linear algebraic structure. This decoupling also permits much finer control in the application of randomization, as well as the easier exploitation of domain knowledge.Most of the review will focus on random sampling algorithms and random projection algorithms for versions of the linear least-squares problem and the low-rank matrix approximation problem. These two problems are fundamental in theory and ubiquitous in practice. Randomized methods solve these problems by constructing and operating on a randomized sketch of the input matrix A — for random sampling methods, the sketch consists of a small number of carefully-sampled and rescaled columns/rows of A, while for random projection methods, the sketch consists of a small number of linear combinations of the columns/rows of A. Depending on the specifics of the situation, when compared with the best previously-existing deterministic algorithms, the resulting randomized algorithms have worst-case running time that is asymptotically faster; their numerical implementations are faster in terms of clock-time; or they can be implemented in parallel computing environments where existing numerical algorithms fail to run at all. Numerous examples illustrating these observations will be described in detail.},
+  journal = {Found. Trends Mach. Learn.},
+  month = feb,
+  pages = {123–224},
+  numpages = {102}
+}
+
+
+
+
+
+
+
+
+@article{drineas2008,
+  author = {Drineas, Petros and Mahoney, Michael W. and Muthukrishnan, S.},
+  title = {Relative-Error CUR Matrix Decompositions},
+  journal = {SIAM Journal on Matrix Analysis and Applications},
+  volume = {30},
+  number = {2},
+  pages = {844-881},
+  year = {2008},
+  doi = {10.1137/07070471X},
+
+  URL = { 
+      
+          https://doi.org/10.1137/07070471X
+      
+      
+
+  },
+  eprint = { 
+      
+          https://doi.org/10.1137/07070471X
+      
+      }
+  ,
+    abstract = { Many data analysis applications deal with large matrices and involve approximating the matrix using a small number of “components.” Typically, these components are linear combinations of the rows and columns of the matrix, and are thus difficult to interpret in terms of the original features of the input data. In this paper, we propose and study matrix approximations that are explicitly expressed in terms of a small number of columns and/or rows of the data matrix, and thereby more amenable to interpretation in terms of the original data. Our main algorithmic results are two randomized algorithms which take as input an \$m\times n\$ matrix A and a rank parameter k. In our first algorithm, C is chosen, and we let \$A'=CC^+A\$, where \$C^+\$ is the Moore–Penrose generalized inverse of C. In our second algorithm C, U, R are chosen, and we let \$A'=CUR\$. (C and R are matrices that consist of actual columns and rows, respectively, of A, and U is a generalized inverse of their intersection.) For each algorithm, we show that with probability at least \$1-\delta\$, \$\|A-A'\|\_F\leq(1+\epsilon)\,\|A-A\_k\|\_F\$, where \$A\_k\$ is the “best” rank-k approximation provided by truncating the SVD of A, and where \$\|X\|\_F\$ is the Frobenius norm of the matrix X. The number of columns of C and rows of R is a low-degree polynomial in k, \$1/\epsilon\$, and \$\log(1/\delta)\$. Both the Numerical Linear Algebra community and the Theoretical Computer Science community have studied variants of these matrix decompositions over the last ten years. However, our two algorithms are the first polynomial time algorithms for such low-rank matrix approximations that come with relative-error guarantees; previously, in some cases, it was not even known whether such matrix decompositions exist. Both of our algorithms are simple and they take time of the order needed to approximately compute the top k singular vectors of A. The technical crux of our analysis is a novel, intuitive sampling method we introduce in this paper called “subspace sampling.” In subspace sampling, the sampling probabilities depend on the Euclidean norms of the rows of the top singular vectors. This allows us to obtain provable relative-error guarantees by deconvoluting “subspace” information and “size-of-A” information in the input matrix. This technique is likely to be useful for other matrix approximation and data analysis problems. }
+}
+
+
+@article{Deville1998,
+ ISSN = {00063444, 14643510},
+ URL = {http://www.jstor.org/stable/2337311},
+ abstract = {A very general class of sampling methods without replacement and with unequal probabilities is proposed. It consists of splitting the inclusion probability vector into several new inclusion probability vectors. One of these vectors is chosen randomly; thus, the initial problem is reduced to another sampling problem with unequal probabilities. This splitting is then repeated on these new vectors of inclusion probabilities; at each step, the sampling problem is reduced to a simpler problem. The simplicity of this technique allows one to generate easily new sampling procedures with unequal probabilities. The splitting method also generalises well-known methods such as the Midzuno method, the elimination procedure and the Chao procedure. Next, a sufficient condition is given in order that a splitting method satisfies the Sen-Yates-Grundy condition. Finally, it is shown that the elimination procedure satisfies the Gabler sufficient condition.},
+ author = {Jean-Claude Deville and Yves Tillé},
+ journal = {Biometrika},
+ number = {1},
+ pages = {89--101},
+ publisher = {[Oxford University Press, Biometrika Trust]},
+ title = {Unequal Probability Sampling Without Replacement Through a Splitting Method},
+ urldate = {2026-03-06},
+ volume = {85},
+ year = {1998}
+}
+
+
+@inbook{Kaufman2022,
+  author = {Tali Kaufman and Rasmus Kyng and Federico Soldá},
+  title = {Scalar and Matrix Chernoff Bounds from $\ell_{\infty}$-Independence},
+  booktitle = {Proceedings of the 2022 Annual ACM-SIAM Symposium on Discrete Algorithms (SODA)},
+  chapter = {},
+  pages = {3732-3753},
+  doi = {10.1137/1.9781611977073.147},
+  URL = {https://epubs.siam.org/doi/abs/10.1137/1.9781611977073.147},
+  eprint = {https://epubs.siam.org/doi/pdf/10.1137/1.9781611977073.147},
+      abstract = { We present new scalar and matrix Chernoff-style concentration bounds for a broad class of probability distributions over the binary hypercube {0, 1}n. Motivated by recent tools developed for the study of mixing times of Markov chains on discrete distributions, we say that a distribution is ℓ∞-independent when the infinity norm of its influence matrix is bounded by a constant. We show that any distribution which is ℓ∞-infinity independent satisfies a matrix Chernoff bound that matches the matrix Chernoff bound for independent random variables due to Tropp. Our matrix Chernoff bound is a broad generalization and strengthening of the matrix Chernoff bound of Kyng and Song (FOCS'18). Using our bound, we can conclude as a corollary that a union of O(log |V|) random spanning trees gives a spectral graph sparsifier of a graph with |V| vertices with high probability matching results for independent edge sampling, and matching lower bounds from Kyng and Song. }
+}
+
+@article{braden2012,
+  author = {Petter Brändén and Johan Jonasson},
+  title = {Negative Dependence in Sampling},
+  journal = {Scandinavian Journal of Statistics},
+  volume = {39},
+  number = {4},
+  pages = {830-838},
+  keywords = {Pareto sampling, Rayleigh property, Sampford sampling, uniform spanning tree},
+  doi = {https://doi.org/10.1111/j.1467-9469.2011.00766.x},
+  url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9469.2011.00766.x},
+  eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1467-9469.2011.00766.x},
+  abstract = {Abstract.  The strong Rayleigh property is a new and robust negative dependence property that implies negative association; in fact it implies conditional negative association closed under external fields (CNA+). Suppose that and are two families of 0-1 random variables that satisfy the strong Rayleigh property and let . We show that {Zi} conditioned on is also strongly Rayleigh; this turns out to be an easy consequence of the results on preservation of stability of polynomials of Borcea \& Brändén (Invent. Math., 177, 2009, 521–569). This entails that a number of important πps sampling algorithms, including Sampford sampling and Pareto sampling, are CNA+. As a consequence, statistics based on such samples automatically satisfy a version of the Central Limit Theorem for triangular arrays.},
+  year = {2012}
+}
+
+
+@article{BENTAL1990165,
+  title = {A geometric property of the least squares solution of linear equations},
+  journal = {Linear Algebra and its Applications},
+  volume = {139},
+  pages = {165-170},
+  year = {1990},
+  issn = {0024-3795},
+  doi = {https://doi.org/10.1016/0024-3795(90)90395-S},
+  url = {https://www.sciencedirect.com/science/article/pii/002437959090395S},
+  author = {Aharon Ben-Tal and Marc Teboulle},
+  abstract = {We derive an explicit determinantal formula for the least squares solution of an overdetermined system of linear equations. From this formula it follows that the least squares solution lies in the convex hull of the solutions to the square subsystems of the original system. We extend this result and prove that this geometric property holds for a more general class of problems which includes the weighted least squares and lp-norm minimization problems.}
+}
+
+@article{magdon2010,
+  author       = {Malik Magdon{-}Ismail},
+  title        = {Row Sampling for Matrix Algorithms via a Non-Commutative Bernstein
+                  Bound},
+  journal      = {CoRR},
+  volume       = {abs/1008.0587},
+  year         = {2010},
+  url          = {http://arxiv.org/abs/1008.0587},
+  eprinttype    = {arXiv},
+  eprint       = {1008.0587},
+  timestamp    = {Mon, 13 Aug 2018 16:47:36 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-1008-0587.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{Woodruff2014,
+author = {Woodruff, David P.},
+title = {Sketching as a Tool for Numerical Linear Algebra},
+year = {2014},
+issue_date = {Oct 2014},
+publisher = {Now Publishers Inc.},
+address = {Hanover, MA, USA},
+volume = {10},
+number = {1–2},
+issn = {1551-305X},
+url = {https://doi.org/10.1561/0400000060},
+doi = {10.1561/0400000060},
+abstract = {This survey highlights the recent advances in algorithms for numerical linear algebra that have come from the technique of linear sketching, whereby given a matrix, one first compresses it to a much smaller matrix by multiplying it by a (usually) random matrix with certain properties. Much of the expensive computation can then be performed on the smaller matrix, thereby accelerating the solution for the original problem. In this survey we consider least squares as well as robust regression problems, low rank approximation, and graph sparsification. We also discuss a number of variants of these problems. Finally, we discuss the limitations of sketching methods.},
+journal = {Found. Trends Theor. Comput. Sci.},
+month = oct,
+pages = {1–157},
+numpages = {160}
+}
+
+
+
+
+
+
+
+
+@article{Boutsidis2014,
+author = {Boutsidis, Christos and Drineas, Petros and Magdon-Ismail, Malik},
+title = {Near-Optimal Column-Based Matrix Reconstruction},
+journal = {SIAM Journal on Computing},
+volume = {43},
+number = {2},
+pages = {687-717},
+year = {2014},
+doi = {10.1137/12086755X},
+
+URL = { 
+    
+        https://doi.org/10.1137/12086755X
+    
+    
+
+},
+eprint = { 
+    
+        https://doi.org/10.1137/12086755X
+    
+    
+
+}
+,
+    abstract = { We consider low-rank reconstruction of a matrix using a subset of its columns and present asymptotically optimal algorithms for both spectral norm and Frobenius norm reconstruction. The main tools we introduce to obtain our results are (i) the use of fast approximate SVD-like decompositions for column-based matrix reconstruction, and (ii) two deterministic algorithms for selecting rows from matrices with orthonormal columns, building upon the sparse representation theorem for decompositions of the identity that appeared in [J. D. Batson, D. A. Spielman, and N. Srivastava, Twice-Ramanujan sparsifiers, in Proceedings of the 41st Annual ACM Symposium on Theory of Computing (STOC), 2009, pp. 255--262]. }
+}
+
+
+@ARTICLE{Boutsidis2013,
+  author={Boutsidis, Christos and Drineas, Petros and Magdon-Ismail, Malik},
+  journal={IEEE Transactions on Information Theory}, 
+  title={Near-Optimal Coresets for Least-Squares Regression}, 
+  year={2013},
+  volume={59},
+  number={10},
+  pages={6880-6892},
+  keywords={Linear regression;Vectors;Approximation methods;Time series analysis;Approximation algorithms;Distributed databases;Electronic mail;Least mean square algorithms;machine learning algorithms;regression analysis},
+  doi={10.1109/TIT.2013.2272457}}
+
+
+@inproceedings{Song2019,
+author = {Song, Zhao and Woodruff, David P. and Zhong, Peilin},
+title = {Relative error tensor low rank approximation},
+year = {2019},
+publisher = {Society for Industrial and Applied Mathematics},
+address = {USA},
+abstract = {We consider relative error low rank approximation of tensors with respect to the Frobenius norm. Namely, given an order- q tensor A ∈ RΠqi=1ni, output a rank-k tensor B for which ||A − B||2F ≤ (1 + ϵ) OPT, where OPT = infrank-k A' ||A − A'||2F. Despite much success on obtaining relative error low rank approximations for matrices, no such results were known for tensors for arbitrary (1 + ϵ)-approximations. One structural issue is that there may be no rank-k tensor Ak achieving the above infinum. Another, computational issue, is that an efficient relative error low rank approximation algorithm for tensors would allow one to compute the rank of a tensor, which is NP-hard. We bypass these two issues via (1) bicriteria and (2) parameterized complexity solutions:1. We give an algorithm which outputs a rank k' = O((k/ϵ)q − 1) tensor B for which ||A − B||2F ≤ (1 + ϵ) OPT in nnz(A) + n · poly(k/ϵ) time in the real RAM model, whenever either Ak exists or OPT > 0. Here nnz(A) denotes the number of non-zero entries in A. If both Ak does not exist and OPT = 0, then B instead satisfies ||A − B||2F < γ, where γ is any positive, arbitrarily small function of n.2. We give an algorithm for any δ > 0 which outputs a rank k tensor B for which ||A − B||2F ≤ (1 + ϵ) OPT and runs in (nnz(A)+ n poly(k/ϵ)+exp(k2/ϵ))·nδ time in the unit cost RAM model, whenever OPT > 2−O(nδ) and there is a rank-k tensor B = ∑ki = 1 ui ⊗ ui ⊗ wi for which ||A − B||2F ≤ (1 + ϵ/2) OPT and ||ui ||2, ||ui ||2, ||wi||2 ≤ 2O(nδ). If OPT ≤ 2-Ω(nδ), then B instead satisfies ||A − B||2F ≤ 2-Ω(nδ).Our first result is polynomial time, and in fact input sparsity time, in n, k, and 1/ϵ, for any k ≥ 1 and any 0 < ϵ < 1, while our second result is fixed parameter tractable in k and 1/ϵ. For outputting a rank-k tensor, or even a bicriteria solution with rank-Ck for a certain constant C > 1, we show a 2Ω(k1 − o(1)) time lower bound under the Exponential Time Hypothesis.Our results are based on an "iterative existential argument", and also give the first relative error low rank approximations for tensors for a large number of error measures for which nothing was known. In particular, we give the first relative error approximation algorithms on tensors for: column row and tube subset selection, entrywise ℓp-low rank approximation for 1 ≤ p < 2, low rank approximation with respect to sum of Euclidean norms of faces or tubes, weighted low rank approximation, and low rank approximation in distributed and streaming models. We also obtain several new results for matrices, such as nnz(A)-time CUR decompositions, improving the previous nnz(A) log n-time CUR decompositions, which may be of independent interest.},
+booktitle = {Proceedings of the Thirtieth Annual ACM-SIAM Symposium on Discrete Algorithms},
+pages = {2772–2789},
+numpages = {18},
+location = {San Diego, California},
+series = {SODA '19}
+}
+
+
+@inproceedings{Alina2009,
+author = {Beygelzimer, Alina and Dasgupta, Sanjoy and Langford, John},
+title = {Importance weighted active learning},
+year = {2009},
+isbn = {9781605585161},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1553374.1553381},
+doi = {10.1145/1553374.1553381},
+abstract = {We present a practical and statistically consistent scheme for actively learning binary classifiers under general loss functions. Our algorithm uses importance weighting to correct sampling bias, and by controlling the variance, we are able to give rigorous label complexity bounds for the learning process.},
+booktitle = {Proceedings of the 26th Annual International Conference on Machine Learning},
+pages = {49–56},
+numpages = {8},
+location = {Montreal, Quebec, Canada},
+series = {ICML '09}
+}
+
+@article{Sanjoy2011,
+author = {Dasgupta, Sanjoy},
+title = {Two faces of active learning},
+year = {2011},
+issue_date = {April, 2011},
+publisher = {Elsevier Science Publishers Ltd.},
+address = {GBR},
+volume = {412},
+number = {19},
+issn = {0304-3975},
+url = {https://doi.org/10.1016/j.tcs.2010.12.054},
+doi = {10.1016/j.tcs.2010.12.054},
+abstract = {An active learner has a collection of data points, each with a label that is initially hidden but can be obtained at some cost. Without spending too much, it wishes to find a classifier that will accurately map points to labels. There are two common intuitions about how this learning process should be organized: (i) by choosing query points that shrink the space of candidate classifiers as rapidly as possible; and (ii) by exploiting natural clusters in the (unlabeled) data set. Recent research has yielded learning algorithms for both paradigms that are efficient, work with generic hypothesis classes, and have rigorously characterized labeling requirements. Here we survey these advances by focusing on two representative algorithms and discussing their mathematical properties and empirical performance.},
+journal = {Theor. Comput. Sci.},
+month = apr,
+pages = {1767–1781},
+numpages = {15},
+keywords = {Learning theory, Active learning}
+}
+
+@inproceedings{Sanjoy2008,
+author = {Dasgupta, Sanjoy and Hsu, Daniel},
+title = {Hierarchical sampling for active learning},
+year = {2008},
+isbn = {9781605582054},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1390156.1390183},
+doi = {10.1145/1390156.1390183},
+abstract = {We present an active learning scheme that exploits cluster structure in data.},
+booktitle = {Proceedings of the 25th International Conference on Machine Learning},
+pages = {208–215},
+numpages = {8},
+location = {Helsinki, Finland},
+series = {ICML '08}
+}
+
+
+@inproceedings{Ksenia2015,
+author = {Konyushkova, Ksenia and Sznitman, Raphael and Fua, Pascal},
+title = {Introducing Geometry in Active Learning for Image Segmentation},
+year = {2015},
+isbn = {9781467383912},
+publisher = {IEEE Computer Society},
+address = {USA},
+url = {https://doi.org/10.1109/ICCV.2015.340},
+doi = {10.1109/ICCV.2015.340},
+abstract = {We propose an Active Learning approach to training a segmentation classifier that exploits geometric priors to streamline the annotation process in 3D image volumes. To this end, we use these priors not only to select voxels most in need of annotation but to guarantee that they lie on 2D planar patch, which makes it much easier to annotate than if they were randomly distributed in the volume. A simplified version of this approach is effective in natural 2D images. We evaluated our approach on Electron Microscopy and Magnetic Resonance image volumes, as well as on natural images. Comparing our approach against several accepted baselines demonstrates a marked performance increase.},
+booktitle = {Proceedings of the 2015 IEEE International Conference on Computer Vision (ICCV)},
+pages = {2974–2982},
+numpages = {9},
+series = {ICCV '15}
+}
+
+@article{Kremer2014,
+author = {Kremer, Jan and Steenstrup Pedersen, Kim and Igel, Christian},
+title = {Active learning with support vector machines},
+year = {2014},
+issue_date = {July 2014},
+publisher = {John Wiley \& Sons, Inc.},
+address = {USA},
+volume = {4},
+number = {4},
+url = {https://doi.org/10.1002/widm.1132},
+doi = {10.1002/widm.1132},
+abstract = {In machine learning, active learning refers to algorithms that autonomously select the data points from which they will learn. There are many data mining applications in which large amounts of unlabeled data are readily available, but labels e.g., human annotations or results coming from complex experiments are costly to obtain. In such scenarios, an active learning algorithm aims at identifying data points that, if labeled and used for training, would most improve the learned model. Labels are then obtained only for the most promising data points. This speeds up learning and reduces labeling costs. Support vector machine SVM classifiers are particularly well-suited for active learning due to their convenient mathematical properties. They perform linear classification, typically in a kernel-induced feature space, which makes expressing the distance of a data point from the decision boundary straightforward. Furthermore, heuristics can efficiently help estimate how strongly learning from a data point influences the current model. This information can be used to actively select training samples. After a brief introduction to the active learning problem, we discuss different query strategies for selecting informative data points and review how these strategies give rise to different variants of active learning with SVMs.},
+journal = {Wiley Int. Rev. Data Min. and Knowl. Disc.},
+month = jul,
+pages = {313–326},
+numpages = {14}
+}
+
+@inproceedings{Tong2004,
+author = {Luo, Tong and Kramer, Kurt and Goldgof, Dmitry B. and Hall, Lawrence O. and Samson, Scott and Remsen, Andrew and Hopkins, Thomas},
+title = {Active Learning to Recognize Multiple Types of Plankton},
+year = {2004},
+isbn = {0769521282},
+publisher = {IEEE Computer Society},
+address = {USA},
+abstract = {Active learning has been applied with support vector machines to reduce the data labeling effort in pattern recognition domains. However, most of those applications only deal with two class problems. In this paper, we extend the active learning approach to multiple class support vector machines. The experimental results from a plankton recognition system indicate that our approach often requires significantly less labeled images to maintain the same accuracy level as random sampling.},
+booktitle = {Proceedings of the Pattern Recognition, 17th International Conference on (ICPR'04) Volume 3 - Volume 03},
+pages = {478–481},
+numpages = {4},
+series = {ICPR '04}
+}
+
+@inproceedings{Sivan2014,
+author = {Sabato, Sivan and Munos, Remi},
+title = {Active regression by stratification},
+year = {2014},
+publisher = {MIT Press},
+address = {Cambridge, MA, USA},
+abstract = {We propose a new active learning algorithm for parametric linear regression with random design. We provide finite sample convergence guarantees for general distributions in the misspecified model. This is the first active learner for this setting that provably can improve over passive learning. Unlike other learning settings (such as classification), in regression the passive learning rate of O(1/∊) cannot in general be improved upon. Nonetheless, the so-called 'constant' in the rate of convergence, which is characterized by a distribution-dependent risk, can be improved in many cases. For a given distribution, achieving the optimal risk requires prior knowledge of the distribution. Following the stratification technique advocated in Monte-Carlo function integration, our active learner approaches the optimal risk using piecewise constant approximations.},
+booktitle = {Proceedings of the 28th International Conference on Neural Information Processing Systems - Volume 1},
+pages = {469–477},
+numpages = {9},
+location = {Montreal, Canada},
+series = {NIPS'14}
+}
+
+
+@inproceedings{Chengtao2017,
+author = {Li, Chengtao and Jegelka, Stefanie and Sra, Suvrit},
+title = {Polynomial time algorithms for dual volume sampling},
+year = {2017},
+isbn = {9781510860964},
+publisher = {Curran Associates Inc.},
+address = {Red Hook, NY, USA},
+abstract = {We study dual volume sampling, a method for selecting k columns from an n \texttimes{} m short and wide matrix (n ≤ k ≤ m) such that the probability of selection is proportional to the volume spanned by the rows of the induced submatrix. This method was proposed by Avron and Boutsidis (2013), who showed it to be a promising method for column subset selection and its multiple applications. However, its wider adoption has been hampered by the lack of polynomial time sampling algorithms. We remove this hindrance by developing an exact (randomized) polynomial time sampling algorithm as well as its derandomization. Thereafter, we study dual volume sampling via the theory of real stable polynomials and prove that its distribution satisfies the "Strong Rayleigh" property. This result has numerous consequences, including a provably fast-mixing Markov chain sampler that makes dual volume sampling much more attractive to practitioners. This sampler is closely related to classical algorithms for popular experimental design methods that are to date lacking theoretical analysis but are known to empirically work well.},
+booktitle = {Proceedings of the 31st International Conference on Neural Information Processing Systems},
+pages = {5045–5054},
+numpages = {10},
+location = {Long Beach, California, USA},
+series = {NIPS'17}
+}
+
+@article{Chkifa2015,
+  author = {Chkifa, Abdellah and Cohen, Albert and Migliorati, Giovanni and Nobile, Fabio and Tempone, Raul},
+  journal = {ESAIM: M2AN},
+  number = {3},
+  title = {Discrete least squares polynomial approximation with random evaluations - application to parametric and stochastic elliptic PDEs},
+  volume = {49},
+  year = {2015},
+  doi = {10.1051/m2an/2014050},
+}
+
+
+
+
+
+
+
+
+@article{Guo2020,
+author = {Guo, Ling and Narayan, Akil and Zhou, Tao},
+title = {Constructing Least-Squares Polynomial Approximations},
+journal = {SIAM Review},
+volume = {62},
+number = {2},
+pages = {483-508},
+year = {2020},
+doi = {10.1137/18M1234151},
+
+URL = { 
+    
+        https://doi.org/10.1137/18M1234151
+    
+    
+
+},
+eprint = { 
+    
+        https://doi.org/10.1137/18M1234151
+    
+    
+
+}
+,
+    abstract = { Polynomial approximations constructed using a least-squares approach form a ubiquitous technique in numerical computation. One of the simplest ways to generate data for least-squares problems is with random sampling of a function. We discuss theory and algorithms for stability of the least-squares problem using random samples. The main lesson from our discussion is that the intuitively straightforward (``standard") density for sampling frequently yields suboptimal approximations, whereas sampling from a non-standard density, called the induced distribution, yields near-optimal approximations. We present a recent theory that demonstrates why sampling from the induced distribution is optimal and provide several numerical experiments that support the theory. Software is also provided that reproduces the figures in this paper. }
+}
+
+
+@article{Castro2008,
+author = {Castro, R. M. and Nowak, R. D.},
+title = {Minimax Bounds for Active Learning},
+year = {2008},
+issue_date = {May 2008},
+publisher = {IEEE Press},
+volume = {54},
+number = {5},
+issn = {0018-9448},
+url = {https://doi.org/10.1109/TIT.2008.920189},
+doi = {10.1109/TIT.2008.920189},
+abstract = {This paper analyzes the potential advantages and theoretical challenges of "active learning" algorithms. Active learning involves sequential sampling procedures that use information gleaned from previous samples in order to focus the sampling and accelerate the learning process relative to "passive learning" algorithms, which are based on nonadaptive (usually random) samples. There are a number of empirical and theoretical results suggesting that in certain situations active learning can be significantly more effective than passive learning. However, the fact that active learning algorithms are feedback systems makes their theoretical analysis very challenging. This paper aims to shed light on achievable limits in active learning. Using minimax analysis techniques, we study the achievable rates of classification error convergence for broad classes of distributions characterized by decision boundary regularity and noise conditions. The results clearly indicate the conditions under which one can expect significant gains through active learning. Furthermore, we show that the learning rates derived are tight for "boundary fragment" classes in d-dimensional feature spaces when the feature marginal density is bounded from above and below.},
+journal = {IEEE Trans. Inf. Theor.},
+month = may,
+pages = {2339–2353},
+numpages = {15},
+keywords = {statistical learning theory, minimax lower bounds, adaptive sampling, Active learning}
+}
+
+@article{Cohn1994,
+author = {Cohn, David and Atlas, Les and Ladner, Richard},
+title = {Improving Generalization with Active Learning},
+year = {1994},
+issue_date = {May 1994},
+publisher = {Kluwer Academic Publishers},
+address = {USA},
+volume = {15},
+number = {2},
+issn = {0885-6125},
+url = {https://doi.org/10.1023/A:1022673506211},
+doi = {10.1023/A:1022673506211},
+abstract = {Active learning differs from “learning from examples” in that the learning algorithm assumes at least some control over what part of the input domain it receives information about. In some situations, active learning is provably more powerful than learning from examples alone, giving better generalization for a fixed number of training examples.In this article, we consider the problem of learning a binary concept in the absence of noise. We describe a formalism for active concept learning called selective sampling and show how it may be approximately implemented by a neural network. In selective sampling, a learner receives distribution information from the environment and queries an oracle on parts of the domain it considers “useful.” We test our implementation, called an SG-network, on three domains and observe significant improvement in generalization.},
+journal = {Mach. Learn.},
+month = may,
+pages = {201–221},
+numpages = {21},
+keywords = {version space, queries, neural networks, generalization, active learning}
+}
+
+
+@book{Mostafa2012,
+author = {Abu-Mostafa, Yaser S. and Magdon-Ismail, Malik and Lin, Hsuan-Tien},
+title = {Learning From Data: A Short Course},
+year = {2012},
+isbn = {1600490069},
+publisher = {AMLBook},
+abstract = {Machine learning allows computational systems to adaptively improve their performance with experience accumulated from the observed data. Its techniques are widely applied in engineering, science, finance, and commerce. This book is designed for a short course on machine learning. It is a short course, not a hurried course. From over a decade of teaching this material, we have distilled what we believe to be the core topics that every student of the subject should know. We chose the title `learning from data' that faithfully describes what the subject is about, and made it a point to cover the topics in a story-like fashion. Our hope is that the reader can learn all the fundamentals of the subject by reading the book cover to cover. ---- Learning from data has distinct theoretical and practical tracks. In this book, we balance the theoretical and the practical, the mathematical and the heuristic. Our criterion for inclusion is relevance. Theory that establishes the conceptual framework for learning is included, and so are heuristics that impact the performance of real learning systems. ---- Learning from data is a very dynamic field. Some of the hot techniques and theories at times become just fads, and others gain traction and become part of the field. What we have emphasized in this book are the necessary fundamentals that give any student of learning from data a solid foundation, and enable him or her to venture out and explore further techniques and theories, or perhaps to contribute their own. ---- The authors are professors at California Institute of Technology (Caltech), Rensselaer Polytechnic Institute (RPI), and National Taiwan University (NTU), where this book is the main text for their popular courses on machine learning. The authors also consult extensively with financial and commercial companies on machine learning applications, and have led winning teams in machine learning competitions.}
+}
+
+@article{Kachitvichyanukul1988,
+author = {Kachitvichyanukul, Voratas and Schmeiser, Bruce W.},
+title = {Binomial random variate generation},
+year = {1988},
+issue_date = {Feb. 1988},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {31},
+number = {2},
+issn = {0001-0782},
+url = {https://doi.org/10.1145/42372.42381},
+doi = {10.1145/42372.42381},
+journal = {Commun. ACM},
+month = feb,
+pages = {216–222},
+numpages = {7}
+}
+
+
+@article{ericslud1977,
+ ISSN = {00911798, 2168894X},
+ URL = {http://www.jstor.org/stable/2242989},
+ author = {Eric V. Slud},
+ journal = {The Annals of Probability},
+ number = {3},
+ pages = {404--412},
+ publisher = {Institute of Mathematical Statistics},
+ title = {Distribution Inequalities for the Binomial Law},
+ urldate = {2026-02-06},
+ volume = {5},
+ year = {1977}
+}
+
+@ARTICLE{Ferrante2021,
+  author={Ferrante, Guido Carlo},
+  journal={IEEE Transactions on Information Theory}, 
+  title={Bounds on Binomial Tails With Applications}, 
+  year={2021},
+  volume={67},
+  number={12},
+  pages={8273-8279},
+  keywords={Upper bound;Random variables;Entropy;Queueing analysis;Mirrors;Guidelines;Gaussian approximation;Probability;random variables;distribution functions},
+  doi={10.1109/TIT.2021.3115044}
+}
+
+
+@misc{Khai2026review,
+  author = {Dong, Khai and Magdon-Ismail, Malik},
+  howpublished = {arXiv},
+  title = {Review: Oblivious Coresets for Tight Active Linear Regression},
+  year = {2026}
+}
+
+@article{Chang2011,
+author = {Chang, Chih-Chung and Lin, Chih-Jen},
+title = {LIBSVM: A library for support vector machines},
+year = {2011},
+issue_date = {April 2011},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {2},
+number = {3},
+issn = {2157-6904},
+url = {https://doi.org/10.1145/1961189.1961199},
+doi = {10.1145/1961189.1961199},
+abstract = {LIBSVM is a library for Support Vector Machines (SVMs). We have been actively developing this package since the year 2000. The goal is to help users to easily apply SVM to their applications. LIBSVM has gained wide popularity in machine learning and many other areas. In this article, we present all implementation details of LIBSVM. Issues such as solving SVM optimization problems theoretical convergence multiclass classification probability estimates and parameter selection are discussed in detail.},
+journal = {ACM Trans. Intell. Syst. Technol.},
+month = may,
+articleno = {27},
+numpages = {27},
+keywords = {Classification LIBSVM optimization regression support vector machines SVM}
+}
+
+
+@book{GVL1996,
+  title={Matrix Computations},
+  author={Golub, G.H. and Van Loan, C.F.},
+  isbn={9780801854149},
+  lccn={96014291},
+  series={Johns Hopkins Studies in the Mathematical Sciences},
+  url={https://books.google.com/books?id=mlOa7wPX6OYC},
+  year={1996},
+  publisher={Johns Hopkins University Press}
+}
+
+@misc{wine_quality_186,
+  author       = {Cortez, Paulo, Cerdeira, A., Almeida, F., Matos, T., and Reis, J.},
+  title        = {{Wine Quality}},
+  year         = {2009},
+  howpublished = {UCI Machine Learning Repository},
+  note         = {{DOI}: https://doi.org/10.24432/C56S3T}
+}
+
+@misc{concrete_compressive_strength_165,
+  author       = {Yeh, I-Cheng},
+  title        = {{Concrete Compressive Strength}},
+  year         = {1998},
+  howpublished = {UCI Machine Learning Repository},
+  note         = {{DOI}: https://doi.org/10.24432/C5PK67}
+}
+@article{scikit-learn,
+  title={Scikit-learn: Machine Learning in {P}ython},
+  author={Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V.
+          and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P.
+          and Weiss, R. and Dubourg, V. and Vanderplas, J. and Passos, A. and
+          Cournapeau, D. and Brucher, M. and Perrot, M. and Duchesnay, E.},
+  journal={Journal of Machine Learning Research},
+  volume={12},
+  pages={2825--2830},
+  year={2011}
+}

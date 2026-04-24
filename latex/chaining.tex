@@ -1,0 +1,160 @@
+\section{Chaining Sampling Algorithm}
+
+Prior work~\cite{gittens2023} showed an approximation ratio of $1 + \mathcal{O}(d/N^2)$ by removing 1 data point from $X$. It also lays out the arguments for the following conjecture. This means we can keep removing 1 data point while preserving an approximation ratio of $1 + \mathcal{O}(d/N^2)$ from the previous dataset, we could potentially remove $\Omega(N)$ data points from $X$.
+
+\begin{theorem} \label{cmi2023:theorem:2.2} \cite[Theorem 2.2]{gittens2023}
+    For any $X$, pick row $i$ to throw out with probability $p_i \propto \frac{(1 - \ell_{i}^2)}{\ell_{i}}$. Then,
+    \begin{equation}
+        \mathbb{E}\left[ \lVert Xw_i^{-} - y \rVert^2 \right] \leq \left(1 + \frac{d}{(N - d)^2} \right)\lVert Xw_* - y \rVert^2.
+    \end{equation}
+\end{theorem}
+\begin{conj} \label{conj:optimistic}
+    Pick any $X$ and pick out $k$ rows $A_k = \{x_1, x_2, \dots, x_k\}$ to throw out with some probability distribution $\PP(x_i | A_{i-1})$. Then,
+    \begin{equation}
+        \mathbb{E}\left[ \lVert Xw_{A_k}^- - y \rVert^2 \right] \leq \left(\prod_{i=0}^{k-1} \left( 1 + \frac{d}{(n - d - i)^2}\right) \right) \lVert Xw_* - y \rVert^2.
+    \end{equation}
+\end{conj}
+
+In this work, we will refine this approach and demonstrate that, under the following assumptions on $X$, a slightly weaker result than Conjecture~\ref{conj:optimistic} can still be obtained.
+
+
+
+\begin{algorithm}
+\caption{Chaining Sampling Algorithm}\label{alg:outline-chaining}
+\begin{algorithmic}[1]
+\Ensure $\mathbb{E}[\lvert Xw_A^- - y \rVert^2_2] \leq (1 + d/N) \lvert Xw_* - y \rVert^2_2$
+\State $A = \emptyset$ \Comment{removed data}.
+\State $\gamma = 0$ \Comment{expected approximation ratio}
+\While{$1 + \gamma \leq 1 + d/N$}
+    \State Sampling rows $x_i$ from $X_A^{-}$ with some probability $p_{A, i}$  
+    \State $A = A \cup \{x_i\}$.
+    \State Recompute the approximation ratio $\gamma$
+\EndWhile
+\State \bf{return} $X_A^-$.
+\end{algorithmic}
+\end{algorithm}
+
+\begin{lemma} \label{lemma:derived-error-A'}
+    Let $A$ be $k$ rows of $X$ and $x_i$ be a row from $X_A^-$. Let $A' = A \cup \{x_i\}$. Then,
+    \begin{align}
+        \lVert Xw_{A'}^- - y\rVert^2_2 &= \lVert Xw_A^- - y \rVert^2_2 + \frac{\lVert u_{A, i} \rVert_2^2 + \lVert \alpha_{A,i} \rVert_2^2}{(1 - \lVert u_{A, i} \rVert_2^2)^2}\lVert x_i^T w_A^- - y_i \rVert_2^2 \nonumber\\
+        & \qquad + 2 (1 - \lVert u_{A, i} \rVert_2^2)^{-1} (Aw_A^- - y_A)^T \alpha_{A, i} (x_i^T w_A^- - y_i).
+    \end{align}
+\end{lemma}
+\begin{proof}
+  Using the identities $w_* = (X^T X)^{-1} X^T y$, $(X_{A}^-)^T X_{A}^- = (X_{A'}^-)^T X_{A'}^- + x_i x_i^T$, $(X_{A}^-)^T y_A^- = (X_{A'}^-)^Ty_{A'} + x_i y_i$, and applying the Woodbury matrix inversion identity, we have that
+
+  \begin{align}
+    & \quad w_{A'}^- \nonumber \\
+    &= \left( (X_{A}^-)^T X_{A}^- - x_ix_i^T \right)^{-1} \cdot \left( (X_{A}^-)^T y_{A}^-  - x_i y_i \right)\\
+    &= \left[ \left((X_{A}^-)^T X_{A}^-\right)^{-1} + \left((X_{A}^-)^T X_{A}^-\right)^{-1} x_i\left(1 - \lVert u_{A, i} \rVert_2^2  \right)^{-1} x_i^T \left((X_{A}^-)^T X_{A}^-\right)^{-1}  \right] \cdot \left( (X_{A}^-)^T y_{A}^-  - x_i y_i \right)\\
+    &= w_A^- + ((X_{A}^-)^T X_{A}^-)^{-1} x_i(1 - \lVert u_{A, i} \rVert_2^2)^{-1} (x_i^T w_A^- - y_i), \label{eqn:w_A_prime}
+  \end{align}
+  where (\ref{eqn:w_A_prime}) follows from Lemma \ref{lemma:cmi2023-17}. Consider $\lVert X w_{A'}^- - y \rVert_2^2$,
+  \begin{align}
+        \lVert Xw_{A'}^- - y \rVert^2_2 &= \lVert Xw_A^- - y \rVert_2^2 \nonumber \\
+        & + (1 - \lVert u_{A, i} \rVert_2^2)^{-2}\lVert x_i^T w_A^- - y_i \rVert_2^2 \lVert X \left((X_{A}^-)^T X_{A}^- \right)^{-1} x_i \rVert_2^2 \nonumber\\
+        & + 2(Xw_A^- - y)^T X \left((X_{A}^-)^T X_{A}^- \right)^{-1} x_i  (1 - \lVert u_{A, i} \rVert_2^2)^{-1}(x_i^T w_A^- - y_i).
+    \end{align}
+    With some rigourous algebra, we can prove that
+    \begin{equation}
+        \lVert X((X_{A}^-)^T X_{A}^-)^{-1} x_i \rVert_2^2 = \lVert \alpha_{A,i} \rVert^2_2 + \lVert u_{A, i} \rVert_2^2.
+    \end{equation}
+    Thus,
+    \begin{align}
+        \lVert Xw_{A'}^- - y \rVert^2_2 &= \lVert Xw_A^- - y \rVert_2^2 + \frac{\lVert u_{A, i} \rVert_2^2 + \lVert \alpha_{A,i} \rVert^2_2}{(1 - \lVert u_{A, i} \rVert_2^2)^{2}}\lVert x_i^T w_A^- - y_i \rVert_2^2 \nonumber \\
+        & \qquad + 2  (1 - \lVert u_{A, i} \rVert_2^2)^{-1} (Aw_A^- - y)^T \alpha_{A, i} (x_i^T w_A^- - y_i),
+    \end{align}
+    since $(X_A^-w_A^- - y_A^-)$ is orthogonal to $X_A^-$. 
+
+\end{proof}
+
+
+\begin{theorem}\label{theorem:chaining}
+    Let $A$ be a set of $k$ rows in $X$. Sample a row $x_i$ in $X_A^-$ with $p_{A, i} \propto \frac{(1 - \lVert u_{A, i} \rVert_2^2)^2}{\lVert u_{A, i} \rVert_2^2}$. Let $A' = A \cup \{x_i\}$. Then,
+   \begin{equation}
+        \EE\left[ \| Xw_{A'}^- - y \|^2 \right] \leq \| Xw_{A}^- - y \|^2 + \frac{d \cdot (1 + \kappa_A)}{(n - d - k)^2} \| X_A^- w_A^- - y_A^- \|^2 + \mathcal{E}_A 
+   \end{equation}
+       
+    where $\kappa_A = \| P_A \|_2 (2 - \| P_A \|_2) (1 - \| P_A \|_2)^{-2}$ and
+    \begin{equation}
+        | \mathcal{E}_A | \leq \mu_A \cdot \frac{d}{(n - d - k)^2} \cdot  
+        \frac{\| P_A  \|_2^{1/2}}{1 - \| P_A \|_2} \cdot 
+        \| A w_A^- - y_A \|   \|X_A^- w_A^- - y_A^- \|
+    \end{equation}
+      where $\mu_A = range \left\{\frac{1}{\lVert u_{A, i} \rVert_2^2} \right\}_{x_i \in X_A^-}$.
+\end{theorem}
+
+
+\begin{proof}
+    By Lemma~\ref{lemma:derived-error-A'}, we have
+    \begin{align}
+        \lVert Xw_{A'}^- - y\rVert^2_2 &= \lVert Xw_A^- - y \rVert^2_2 + \frac{\lVert u_{A, i} \rVert_2^2 + \lVert \alpha_{A,i} \rVert_2^2}{(1 - \lVert u_{A, i} \rVert_2^2)^2}\lVert x_i^T w_A^- - y_i \rVert_2^2 \nonumber\\
+        & \qquad + 2 (1 - \lVert u_{A, i} \rVert_2^2)^{-1} (Aw_A^- - y_A)^T \alpha_{A, i} (x_i^T w_A^- - y_i).
+    \end{align}
+    Thus, by Lemma~\ref{lemma:alpha_Ai-norm},
+    \begin{align}
+         \EE\left[ \lVert Xw^-_{A'} - y \rVert_2^2 \right] &= \lVert Xw_{A}^- - y \rVert_2^2 + \frac{1}{Z_A} \sum_{i} \frac{\lVert u_{A, i} \rVert_2^2 + \lVert \alpha_{A,i} \rVert_2^2}{\lVert u_{A, i} \rVert_2^2}\lVert x_i^T w_A^- - y_i \rVert_2^2 \nonumber \\
+         & \qquad + \frac{2}{Z_A} (Aw_A^- - y_A)^T (I - P_A)^{-1} U_A \sum_{i} \frac{1 - \lVert u_{A, i} \rVert_2^2}{\lVert u_{A, i} \rVert_2^2} u_i (x_i^T w_A^- - y_i) \label{eqn:27}.
+    \end{align}
+    By Lemma~\ref{lemma:u_Ai-norm}, Lemma~\ref{lemma:sum-norm-u-alpha}, and \cite[Lemma 2.3.3]{GVL1996}, we have that
+    \begin{align}
+        \frac{\lVert u_{A, i} \rVert_2^2 + \lVert \alpha_{A,i} \rVert_2^2}{\lVert u_{A, i} \rVert_2^2} &= \frac{\lVert u_i \rVert_2^2 +  u_i^T U_A^T \left[ (I - P_A)^{-1} + (I - P_A)^{-2} \right] U_A u_i}{\lVert u_i \rVert_2^2 + u_i^T U_A^T (I - P_A)^{-1} U_A u_i}\\
+        & \leq 1 + \lVert P_A \rVert_2 \left[ (1 - \lVert P_A \rVert_2)^{-1} + (1 - \lVert P_A \rVert_2)^{-2} \right] \label{eqn:28}\\
+        & = 1 + \lVert P_A \rVert_2 (2 - \lVert P_A \rVert_2) (1 - \lVert P_A \rVert_2)^{-2}.
+    \end{align}
+    For brevity, define $\kappa_A = \lVert P_A \rVert_2 (2 - \lVert P_A \rVert_2) (1 - \lVert P_A \rVert_2)^{-2}$. Then, by Lemma~\ref{lemma:UtDy}, we have that
+    \begin{align}
+        \sum_{i} \frac{1 - \lVert u_{A, i} \rVert_2^2}{\lVert u_{A, i} \rVert_2^2} u_i (x_i^T w_A^- - y_i) = (U_{A}^-)^T D_1 (X_A^-w_A^- - y_A^-) \label{eqn:29}.
+    \end{align}
+    for $D_1 = \mathrm{Diag} \left( \left[ \frac{1 - \lVert u_{A, i} \rVert_2^2}{\lVert u_{A, i} \rVert_2^2} \right]_{i} \right)$. Putting (\ref{eqn:28}), (\ref{eqn:29}), and Lemma~\ref{lemma:reduce-to-prod-U} into (\ref{eqn:27}), we have that
+    \begin{align}
+        \EE\left[ \lVert Xw^-_{A'} - y \rVert_2^2 \right] & \leq \lVert Xw_{A}^- - y \rVert_2^2 \nonumber \\
+        & \quad + \frac{1 + \kappa_A}{Z_A} \lVert X_A^- w_A^- - y_A^- \rVert_2^2 \nonumber \\
+        & \quad + \frac{2}{Z_A}  (Aw_A^- - y_A)^T (I - P_A)^{-1} A (X^T X)^{-1} (X_A^-)^T D_1 (X_A^- w_A^- - y_A^-) \label{eqn:31}.
+    \end{align}
+    We observe that $(X_A^-)^T (X_A^- w_A^- - y_A^-) = 0$. Thus, we can substract any multiple of $I$ from $D_1$ in (\ref{eqn:31}). Thus, 
+    \begin{align}
+        \EE\left[ \lVert Xw^-_{A'} - y \rVert_2^2 \right] & \leq \lVert Xw_{A}^- - y \rVert_2^2 \nonumber \\
+        & \quad + \frac{1 + \kappa_A}{Z_A} \lVert X_A^- w_A^- - y_A^- \rVert_2^2 \nonumber \\
+        & \quad + \frac{2}{Z_A}  (Aw_A^- - y_A)^T (I - P_A)^{-1} U_A (U_A^-)^T D_2 (X_A^- w_A^- - y_A^-) \label{eqn:32}
+    \end{align}
+    where
+    \begin{equation}
+        D_2 = \mathrm{Diag} \left( \left[ \frac{1}{\lVert u_{A, i} \rVert_2^2} \right]_{i} \right) - \frac{1}{2} \left[ \left(\min_i \frac{1}{\lVert u_{A, i} \rVert_2^2} \right) +  \left( \max_i \frac{1}{\lVert u_{A, i} \rVert_2^2} \right) \right] I.
+    \end{equation}
+    Define $\mu_A =  \max_i \frac{1}{\lVert u_{A, i} \rVert_2^2} - \min_i \frac{1}{\lVert u_{A, i} \rVert_2^2}$. By construction, $\lVert D_2 \rVert_2 \leq \mu_A / 2$. Denote
+    \begin{equation}
+        \mathcal{E}_A = \frac{2}{Z_A}  (Aw_A^- - y_A)^T (I - P_A)^{-1} U_A (U_A^-)^T D_2 (X_A^- w_A^- - y_A^-).
+    \end{equation}
+    Then,
+    \begin{equation}
+        | \mathcal{E}_A | \leq \frac{\mu_A}{Z_A} \cdot  \frac{\lVert P_A \rVert_2^{1/2}}{1 - \lVert P_A \rVert_2} \cdot \lVert Aw_A^- - y_A \rVert_2   \lVert X_A^- w_A^- - y_A^- \rVert_2.   
+    \end{equation}
+    Put everything together, we have that
+   \begin{align}
+        \EE\left[ \lVert Xw^-_{A'} - y \rVert_2^2 \right] & \leq \lVert Xw_{A}^- - y \rVert_2^2 + \frac{1 + \kappa_A}{ Z_A } \lVert X_A^- w_A^- - y_A^- \rVert_2^2 + \mathcal{E}_A, 
+    \end{align} 
+    By the same argument in \cite[Theorem 1]{gittens2023}, $Z_A \geq \frac{(N - k - d)^2}{d}$, as desired.
+\end{proof}
+
+Under Assumption~\ref{assump:pA_upperbound}, $\kappa_A$ is bounded by a constant. In Algorithm \ref{alg:outline-chaining}, at every iteration, we can compute $\lVert P_A \rVert_2$ in recomputing approximation ratio $1 + \gamma$ to maximize the amount of data removed. Then, by Asssumption~\ref{assump:muA-using-ui}, $\mu_A \in \mathcal{O}(d/N)$. Thus, we can remove $\Omega(N)$ data points from $X$ if either by Asssumption~\ref{assump:muA-using-ui} or Assumption~\ref{assump:sum-E-A} holds.
+
+\begin{assump} \label{assump:pA_upperbound}
+  For $|A| \leq \lfloor N/2 \rfloor$, $\lVert P_A \rVert_2 \leq 1/2$.
+\end{assump}
+
+\begin{assump} \label{assump:muA-using-ui}
+  For $\max_i \lVert u_{A, i} \rVert^2_2 - \min_i \lVert u_{A, i} \rVert^2_2 \in \mathcal{O}(d / N^2)$.
+\end{assump}
+
+\begin{assump} \label{assump:sum-E-A}
+    $\sum_i \mathcal{E}_{A_i} \in \mathcal{O}(d / N)$.
+\end{assump}
+
+In practice, since $A$ is known at runtime, we can just stop when Assumption~\ref{assump:pA_upperbound} does not hold.  Asssumption~\ref{assump:muA-using-ui}, however, does not hold for a lot of $X$. However, in most cases, the algorihtm suceed in reducing the label complexity by $\mathcal{O}(N)$; what was observed is Assumption~\ref{assump:sum-E-A} as $\mathcal{E}_A$ can be less than 0, which allows the terms to cancel itself out.
+
+
+
+
+
