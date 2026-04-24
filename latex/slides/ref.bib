@@ -1,0 +1,258 @@
+@book{Mostafa2012,
+author = {Abu-Mostafa, Yaser S. and Magdon-Ismail, Malik and Lin, Hsuan-Tien},
+title = {Learning From Data: A Short Course},
+year = {2012},
+isbn = {1600490069},
+publisher = {AMLBook},
+abstract = {Machine learning allows computational systems to adaptively improve their performance with experience accumulated from the observed data. Its techniques are widely applied in engineering, science, finance, and commerce. This book is designed for a short course on machine learning. It is a short course, not a hurried course. From over a decade of teaching this material, we have distilled what we believe to be the core topics that every student of the subject should know. We chose the title `learning from data' that faithfully describes what the subject is about, and made it a point to cover the topics in a story-like fashion. Our hope is that the reader can learn all the fundamentals of the subject by reading the book cover to cover. ---- Learning from data has distinct theoretical and practical tracks. In this book, we balance the theoretical and the practical, the mathematical and the heuristic. Our criterion for inclusion is relevance. Theory that establishes the conceptual framework for learning is included, and so are heuristics that impact the performance of real learning systems. ---- Learning from data is a very dynamic field. Some of the hot techniques and theories at times become just fads, and others gain traction and become part of the field. What we have emphasized in this book are the necessary fundamentals that give any student of learning from data a solid foundation, and enable him or her to venture out and explore further techniques and theories, or perhaps to contribute their own. ---- The authors are professors at California Institute of Technology (Caltech), Rensselaer Polytechnic Institute (RPI), and National Taiwan University (NTU), where this book is the main text for their popular courses on machine learning. The authors also consult extensively with financial and commercial companies on machine learning applications, and have led winning teams in machine learning competitions.}
+}
+
+@article{drineas2008,
+  author = {Drineas, Petros and Mahoney, Michael W. and Muthukrishnan, S.},
+  title = {Relative-Error CUR Matrix Decompositions},
+  journal = {SIAM Journal on Matrix Analysis and Applications},
+  volume = {30},
+  number = {2},
+  pages = {844-881},
+  year = {2008},
+  doi = {10.1137/07070471X},
+
+  URL = { 
+      
+          https://doi.org/10.1137/07070471X
+      
+      
+
+  },
+  eprint = { 
+      
+          https://doi.org/10.1137/07070471X
+      
+      }
+  ,
+    abstract = { Many data analysis applications deal with large matrices and involve approximating the matrix using a small number of “components.” Typically, these components are linear combinations of the rows and columns of the matrix, and are thus difficult to interpret in terms of the original features of the input data. In this paper, we propose and study matrix approximations that are explicitly expressed in terms of a small number of columns and/or rows of the data matrix, and thereby more amenable to interpretation in terms of the original data. Our main algorithmic results are two randomized algorithms which take as input an \$m\times n\$ matrix A and a rank parameter k. In our first algorithm, C is chosen, and we let \$A'=CC^+A\$, where \$C^+\$ is the Moore–Penrose generalized inverse of C. In our second algorithm C, U, R are chosen, and we let \$A'=CUR\$. (C and R are matrices that consist of actual columns and rows, respectively, of A, and U is a generalized inverse of their intersection.) For each algorithm, we show that with probability at least \$1-\delta\$, \$\|A-A'\|\_F\leq(1+\epsilon)\,\|A-A\_k\|\_F\$, where \$A\_k\$ is the “best” rank-k approximation provided by truncating the SVD of A, and where \$\|X\|\_F\$ is the Frobenius norm of the matrix X. The number of columns of C and rows of R is a low-degree polynomial in k, \$1/\epsilon\$, and \$\log(1/\delta)\$. Both the Numerical Linear Algebra community and the Theoretical Computer Science community have studied variants of these matrix decompositions over the last ten years. However, our two algorithms are the first polynomial time algorithms for such low-rank matrix approximations that come with relative-error guarantees; previously, in some cases, it was not even known whether such matrix decompositions exist. Both of our algorithms are simple and they take time of the order needed to approximately compute the top k singular vectors of A. The technical crux of our analysis is a novel, intuitive sampling method we introduce in this paper called “subspace sampling.” In subspace sampling, the sampling probabilities depend on the Euclidean norms of the rows of the top singular vectors. This allows us to obtain provable relative-error guarantees by deconvoluting “subspace” information and “size-of-A” information in the input matrix. This technique is likely to be useful for other matrix approximation and data analysis problems. }
+}
+
+@article{bss12,
+  author = {Batson, Joshua and Spielman, Daniel A. and Srivastava, Nikhil},
+  title = {Twice-Ramanujan Sparsifiers},
+  journal = {SIAM Journal on Computing},
+  volume = {41},
+  number = {6},
+  pages = {1704-1721},
+  year = {2012},
+  doi = {10.1137/090772873},
+  URL = {https://doi.org/10.1137/090772873},
+  eprint = {https://doi.org/10.1137/090772873},
+  abstract = { We prove that every graph has a spectral sparsifier with a number of edges linear in its number of vertices. As linear-sized spectral sparsifiers of complete graphs are expanders, our sparsifiers of arbitrary graphs can be viewed as generalizations of expander graphs. In particular, we prove that for every \$d>1\$ and every undirected, weighted graph \$G=(V,E,w)\$ on \$n\$ vertices, there exists a weighted graph \$H=(V,F,\tilde{w})\$ with at most \$\lceil d(n-1)\rceil\$ edges such that for every \$x\in\mathbb{R}^{V}\$, \$x^{T}L\_{G}x\leq x^{T}L\_{H}x\leq\bigl(\frac{d+1+2\sqrt{d}}{d+1-2\sqrt{d}}\bigr)\cdot x^{T}L\_{G}x\$, where \$L\_{G}\$ and \$L\_{H}\$ are the Laplacian matrices of \$G\$ and \$H\$, respectively. Thus, \$H\$ approximates \$G\$ spectrally at least as well as a Ramanujan expander with \$dn/2\$ edges approximates the complete graph. We give an elementary deterministic polynomial time algorithm for constructing \$H\$. }
+}
+
+
+
+@article{Woodruff2014,
+author = {Woodruff, David P.},
+title = {Sketching as a Tool for Numerical Linear Algebra},
+year = {2014},
+issue_date = {Oct 2014},
+publisher = {Now Publishers Inc.},
+address = {Hanover, MA, USA},
+volume = {10},
+number = {1–2},
+issn = {1551-305X},
+url = {https://doi.org/10.1561/0400000060},
+doi = {10.1561/0400000060},
+abstract = {This survey highlights the recent advances in algorithms for numerical linear algebra that have come from the technique of linear sketching, whereby given a matrix, one first compresses it to a much smaller matrix by multiplying it by a (usually) random matrix with certain properties. Much of the expensive computation can then be performed on the smaller matrix, thereby accelerating the solution for the original problem. In this survey we consider least squares as well as robust regression problems, low rank approximation, and graph sparsification. We also discuss a number of variants of these problems. Finally, we discuss the limitations of sketching methods.},
+journal = {Found. Trends Theor. Comput. Sci.},
+month = oct,
+pages = {1–157},
+numpages = {160}
+}
+
+@ARTICLE{Boutsidis2013,
+  author={Boutsidis, Christos and Drineas, Petros and Magdon-Ismail, Malik},
+  journal={IEEE Transactions on Information Theory}, 
+  title={Near-Optimal Coresets for Least-Squares Regression}, 
+  year={2013},
+  volume={59},
+  number={10},
+  pages={6880-6892},
+  keywords={Linear regression;Vectors;Approximation methods;Time series analysis;Approximation algorithms;Distributed databases;Electronic mail;Least mean square algorithms;machine learning algorithms;regression analysis},
+  doi={10.1109/TIT.2013.2272457}}
+
+@InProceedings{pmlr-v99-chen19a,
+  title = 	 {Active Regression via Linear-Sample Sparsification},
+  author =       {Chen, Xue and Price, Eric},
+  booktitle = 	 {Proceedings of the Thirty-Second Conference on Learning Theory},
+  pages = 	 {663--695},
+  year = 	 {2019},
+  editor = 	 {Beygelzimer, Alina and Hsu, Daniel},
+  volume = 	 {99},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {6},
+  publisher =    {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v99/chen19a/chen19a.pdf},
+  url = 	 {https://proceedings.mlr.press/v99/chen19a.html},
+  abstract = 	 { We present an approach that improves the sample complexity for a variety of curve fitting problems, including active learning for linear regression, polynomial regression, and continuous sparse Fourier transforms.  In the active linear regression problem, one would like to estimate the least squares solution $\beta^*$ minimizing $\|X\beta - y\|_2$ given the entire unlabeled dataset $X \in \mathbb{R}^{n \times d}$ but only observing a small number of labels $y_i$.  We show that $O(d)$ labels suffice to find a constant factor approximation $\widetilde{\beta}$: \[ \mathbb{E}[\|{X} \widetilde{\beta} - y \|_2^2] \leq 2 \mathbb{E}[\|X \beta^* - y\|_2^2]. \]{This} improves on the best previous result of $O(d \log d)$ from leverage score sampling.  We also present results for the \emph{inductive} setting, showing when $\widetilde{\beta}$ will generalize to fresh samples; these apply to continuous settings such as polynomial regression.  Finally, we show how the techniques yield improved results for the non-linear sparse Fourier transform setting.   }
+}
+
+@INPROCEEDINGS{yintatlee2015,
+  author={Lee, Yin Tat and Sun, He},
+  booktitle={2015 IEEE 56th Annual Symposium on Foundations of Computer Science}, 
+  title={Constructing Linear-Sized Spectral Sparsification in Almost-Linear Time}, 
+  year={2015},
+  volume={},
+  number={},
+  pages={250-269},
+  keywords={Approximation methods;Approximation algorithms;Eigenvalues and eigenfunctions;Algorithm design and analysis;Laplace equations;Resistance;Computer science;algorithmic spectral graph theory;spectral sparsification},
+  doi={10.1109/FOCS.2015.24}
+}
+
+@inproceedings{shimizu2024improved,
+  title={Improved Active Learning via Dependent Leverage Score Sampling},
+  author={Atsushi Shimizu and Xiaoou Cheng and Christopher Musco and Jonathan Weare},
+  booktitle={The Twelfth International Conference on Learning Representations},
+  year={2024},
+  url={https://openreview.net/forum?id=IYxDy2jDFL}
+}
+
+@inproceedings{derenski2018,
+  author = {Derezi\'{n}ski, Michat and Warmuth, Manfred K. and Hsu, Daniel},
+  title = {Leveraged volume sampling for linear regression},
+  year = {2018},
+  publisher = {Curran Associates Inc.},
+  address = {Red Hook, NY, USA},
+  abstract = {Suppose an n \texttimes{} d design matrix in a linear regression problem is given, but the response for each point is hidden unless explicitly requested. The goal is to sample only a small number k ≪ n of the responses, and then produce a weight vector whose sum of squares loss over all points is at most 1 + ε times the minimum. When k is very small (e.g., k = d), jointly sampling diverse subsets of points is crucial. One such method called volume sampling has a unique and desirable property that the weight vector it produces is an unbiased estimate of the optimum. It is therefore natural to ask if this method offers the optimal unbiased estimate in terms of the number of responses k needed to achieve a 1 + ε loss approximation.Surprisingly we show that volume sampling can have poor behavior when we require a very accurate approximation – indeed worse than some i.i.d. sampling techniques whose estimates are biased, such as leverage score sampling. We then develop a new rescaled variant of volume sampling that produces an unbiased estimate which avoids this bad behavior and has at least as good a tail bound as leverage score sampling: sample size k = O(d log d + d/ε) suffices to guarantee total loss at most 1 + ε times the minimum with high probability. Thus we improve on the best previously known sample size for an unbiased estimator, k = O(ε2/ε).Our rescaling procedure leads to a new efficient algorithm for volume sampling which is based on a determinantal rejection sampling technique with potentially broader applications to determinantal point processes. Other contributions include introducing the combinatorics needed for rescaled volume sampling and developing tail bounds for sums of dependent random matrices which arise in the process.},
+  booktitle = {Proceedings of the 32nd International Conference on Neural Information Processing Systems},
+  pages = {2510–2519},
+  numpages = {10},
+  location = {Montr\'{e}al, Canada},
+  series = {NIPS'18}
+}
+
+@inproceedings{derenski2017,
+  author = {Derezi\'{n}ski, Micha\l{} and Warmuth, Manfred K.},
+  title = {Unbiased estimates for linear regression via volume sampling},
+  year = {2017},
+  isbn = {9781510860964},
+  publisher = {Curran Associates Inc.},
+  address = {Red Hook, NY, USA},
+  abstract = {Given a full rank matrix X with more columns than rows, consider the task of estimating the pseudo inverse X+ based on the pseudo inverse of a sampled subset of columns (of size at least the number of rows). We show that this is possible if the subset of columns is chosen proportional to the squared volume spanned by the rows of the chosen submatrix (ie, volume sampling). The resulting estimator is unbiased and surprisingly the covariance of the estimator also has a closed form: It equals a specific factor times X+⊤ X+.Pseudo inverse plays an important part in solving the linear least squares problem, where we try to predict a label for each column of X. We assume labels are expensive and we are only given the labels for the small subset of columns we sample from X. Using our methods we show that the weight vector of the solution for the sub problem is an unbiased estimator of the optimal solution for the whole problem based on all column labels.We believe that these new formulas establish a fundamental connection between linear least squares and volume sampling. We use our methods to obtain an algorithm for volume sampling that is faster than state-of-the-art and for obtaining bounds for the total loss of the estimated least-squares solution on all labeled columns.},
+  booktitle = {Proceedings of the 31st International Conference on Neural Information Processing Systems},
+  pages = {3087–3096},
+  numpages = {10},
+  location = {Long Beach, California, USA},
+  series = {NIPS'17}
+}
+
+@article{Munteanu2018,
+  author       = {Alexander Munteanu and
+                  Chris Schwiegelshohn and
+                  Christian Sohler and
+                  David P. Woodruff},
+  title        = {On Coresets for Logistic Regression},
+  journal      = {CoRR},
+  volume       = {abs/1805.08571},
+  year         = {2018},
+  url          = {http://arxiv.org/abs/1805.08571},
+  eprinttype   = {arXiv},
+  eprint       = {1805.08571},
+  timestamp    = {Mon, 13 Aug 2018 16:48:32 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-1805-08571.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@misc{Mai2021,
+      title={Coresets for Classification -- Simplified and Strengthened}, 
+      author={Tung Mai and Anup B. Rao and Cameron Musco},
+      year={2021},
+      eprint={2106.04254},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2106.04254}, 
+}
+
+@misc{musco2022,
+      title={Active Linear Regression for $\ell_p$ Norms and Beyond}, 
+      author={Cameron Musco and Christopher Musco and David P. Woodruff and Taisuke Yasuda},
+      year={2022},
+      eprint={2111.04888},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2111.04888}, 
+}
+
+
+@Article{Tropp2012,
+  author={Tropp, Joel A.},
+  title={User-Friendly Tail Bounds for Sums of Random Matrices},
+  journal={Foundations of Computational Mathematics},
+  year={2012},
+  month={Aug},
+  day={01},
+  volume={12},
+  number={4},
+  pages={389-434},
+  abstract={This paper presents new probability inequalities for sums of independent, random, self-adjoint matrices. These results place simple and easily verifiable hypotheses on the summands, and they deliver strong conclusions about the large-deviation behavior of the maximum eigenvalue of the sum. Tail bounds for the norm of a sum of random rectangular matrices follow as an immediate corollary. The proof techniques also yield some information about matrix-valued martingales.},
+  issn={1615-3383},
+  doi={10.1007/s10208-011-9099-z},
+  url={https://doi.org/10.1007/s10208-011-9099-z}
+}
+@misc{ziprecruiter_data_annotation_salary,
+  author = {{ZipRecruiter}},
+  title = {Data Annotation Salary: Hourly Rate},
+  year = {2026},
+  url = {https://www.ziprecruiter.com/Salaries/Data-Annotation-Salary},
+  note = {Accessed: April 22, 2026}
+}
+
+@inproceedings{chinchilla,
+author = {Hoffmann, Jordan and Borgeaud, Sebastian and Mensch, Arthur and Buchatskaya, Elena and Cai, Trevor and Rutherford, Eliza and de Las Casas, Diego and Hendricks, Lisa Anne and Welbl, Johannes and Clark, Aidan and Hennigan, Tom and Noland, Eric and Millican, Katie and van den Driessche, George and Damoc, Bogdan and Guy, Aurelia and Osindero, Simon and Simonyan, Karen and Elsen, Erich and Vinyals, Oriol and Rae, Jack W. and Sifre, Laurent},
+title = {Training compute-optimal large language models},
+year = {2022},
+isbn = {9781713871088},
+publisher = {Curran Associates Inc.},
+address = {Red Hook, NY, USA},
+abstract = {We investigate the optimal model size and number of tokens for training a Transformer language model under a given compute budget. We find that current large language models are significantly undertrained, a consequence of the recent focus on scaling language models whilst keeping the amount of training data constant. By training over 400 language models ranging from 70 million to over 16 billion parameters on 5 to 500 billion tokens, we find that for compute-optimal training, the model size and the number of training tokens should be scaled equally: for every doubling of model size the number of training tokens should also be doubled. We test this hypothesis by training a predicted compute-optimal model, Chinchilla, that uses the same compute budget as Gopher but with 70B parameters and 4\texttimes{} more more data. Chinchilla uniformly and significantly outperforms Gopher (280B), GPT-3 (175B), Jurassic-1 (178B), and Megatron-Turing NLG (530B) on a large range of downstream evaluation tasks. This also means that Chinchilla uses substantially less compute for fine-tuning and inference, greatly facilitating downstream usage. As a highlight, Chinchilla reaches a state-of-the-art average accuracy of 67.5\% on the MMLU benchmark, greater than a 7\% improvement over Gopher.},
+booktitle = {Proceedings of the 36th International Conference on Neural Information Processing Systems},
+articleno = {2176},
+numpages = {15},
+location = {New Orleans, LA, USA},
+series = {NIPS '22}
+}
+
+@misc{gittens2023,
+      title={Reduced Label Complexity For Tight $\ell_2$ Regression}, 
+      author={Alex Gittens and Malik Magdon-Ismail},
+      year={2023},
+      eprint={2305.07486},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2305.07486}, 
+}
+
+@misc{wine_quality_186,
+  author       = {Cortez, Paulo, Cerdeira, A., Almeida, F., Matos, T., and Reis, J.},
+  title        = {{Wine Quality}},
+  year         = {2009},
+  howpublished = {UCI Machine Learning Repository},
+  note         = {{DOI}: https://doi.org/10.24432/C56S3T}
+}
+
+@misc{concrete_compressive_strength_165,
+  author       = {Yeh, I-Cheng},
+  title        = {{Concrete Compressive Strength}},
+  year         = {1998},
+  howpublished = {UCI Machine Learning Repository},
+  note         = {{DOI}: https://doi.org/10.24432/C5PK67}
+}
+@article{scikit-learn,
+  title={Scikit-learn: Machine Learning in {P}ython},
+  author={Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V.
+          and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P.
+          and Weiss, R. and Dubourg, V. and Vanderplas, J. and Passos, A. and
+          Cournapeau, D. and Brucher, M. and Perrot, M. and Duchesnay, E.},
+  journal={Journal of Machine Learning Research},
+  volume={12},
+  pages={2825--2830},
+  year={2011}
+}
